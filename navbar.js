@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', function () {
 	document.querySelectorAll('li.group').forEach((group) => {
 		const button = group.querySelector('button');
 		const dropdown = group.querySelector('div.absolute');
-		if (!button || !dropdown) return;
+		const chevron = button.querySelector('svg'); // Find the chevron icon inside the button
+		if (!button || !dropdown || !chevron) return;
 
 		let hoverTimeout;
 
@@ -37,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 
 		// --- Mobile Dropdowns ---
-		button.addEventListener('click', function (e) {
+		chevron.addEventListener('click', function (e) {
 			if (!isMobile()) return; // Only for mobile
 			e.stopPropagation();
 			// Close other dropdowns
@@ -73,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		navOpen = true;
 		document.body.classList.add('mobile-menu-open');
 
-		// NEW: Set opacity to 1 for all .max-nav\:opacity-0 elements (show mobile menu content)
+		// Set opacity to 1 for all .max-nav\:opacity-0 elements (show mobile menu content)
 		document.querySelectorAll('.max-nav\\:opacity-0').forEach((el) => {
 			el.style.opacity = '1';
 		});
@@ -91,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			dd.style.top = '0px';
 		});
 
-		// NEW: Set opacity to 0 for all .max-nav\:opacity-0 elements (hide mobile menu content)
+		// Set opacity to 0 for all .max-nav\:opacity-0 elements (hide mobile menu content)
 		document.querySelectorAll('.max-nav\\:opacity-0').forEach((el) => {
 			el.style.opacity = '0';
 		});
