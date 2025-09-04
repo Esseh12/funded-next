@@ -1,5 +1,3 @@
-// Improved Mobile Navbar: dropdown overlays below item, width matches dropdown content, normal mobile behavior
-
 document.addEventListener('DOMContentLoaded', function () {
 	// Helper: detect mobile
 	function isMobile() {
@@ -15,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		let hoverTimeout;
 
-		// Desktop hover logic
+		// Desktop hover logic (unchanged)
 		function showDropdown() {
 			clearTimeout(hoverTimeout);
 			dropdown.style.opacity = '1';
@@ -69,9 +67,9 @@ document.addEventListener('DOMContentLoaded', function () {
 				dd.style.opacity = '0';
 				dd.style.pointerEvents = 'none';
 				dd.style.position = 'absolute';
-				dd.style.top = '';
 				dd.style.left = '';
 				dd.style.right = '-150px';
+				dd.style.top = '';
 				dd.style.width = '';
 				dd.style.zIndex = '';
 				dd.style.background = '';
@@ -80,16 +78,17 @@ document.addEventListener('DOMContentLoaded', function () {
 			});
 			const isShown = dropdown.style.opacity === '1';
 			if (!isShown) {
-				// Position dropdown below button, overlay content, normal width
+				// --- Improved mobile dropdown positioning & width ---
 				dropdown.style.opacity = '1';
 				dropdown.style.pointerEvents = 'auto';
 				dropdown.style.position = 'absolute';
-				dropdown.style.left = '0';
-				dropdown.style.right = '0';
-				dropdown.style.top = button.offsetHeight + 'px'; // Just beneath the button
-				dropdown.style.width = 'auto'; // Use dropdown's CSS width
+				dropdown.style.left = '45%';
+				dropdown.style.transform = 'translateX(-50%)';
+				dropdown.style.top = button.offsetHeight + 'px';
+				dropdown.style.width = Math.min(window.innerWidth - 32, 450) + 'px'; // max 300px, never exceeds screen minus 32px margin
+				dropdown.style.maxWidth = 'calc(100vw - 32px)';
 				dropdown.style.zIndex = '100';
-				// dropdown.style.background = '#fff';
+				dropdown.style.background = '#fff';
 				dropdown.style.borderRadius = '0 0 16px 16px';
 				dropdown.style.boxShadow = '0 4px 24px rgba(0,0,0,0.15)';
 			} else {
@@ -98,8 +97,10 @@ document.addEventListener('DOMContentLoaded', function () {
 				dropdown.style.position = 'absolute';
 				dropdown.style.left = '';
 				dropdown.style.right = '-150px';
+				dropdown.style.transform = '';
 				dropdown.style.top = '';
 				dropdown.style.width = '';
+				dropdown.style.maxWidth = '';
 				dropdown.style.zIndex = '';
 				dropdown.style.background = '';
 				dropdown.style.borderRadius = '';
@@ -139,8 +140,10 @@ document.addEventListener('DOMContentLoaded', function () {
 			dd.style.position = 'absolute';
 			dd.style.left = '';
 			dd.style.right = '-150px';
+			dd.style.transform = '';
 			dd.style.top = '';
 			dd.style.width = '';
+			dd.style.maxWidth = '';
 			dd.style.zIndex = '';
 			dd.style.background = '';
 			dd.style.borderRadius = '';
@@ -163,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 
 	// --- Close menus/dropdowns on outside click ---
-	document.body.addEventListener('click', function () {
+	document.body.addEventListener('click', function (e) {
 		if (!isMobile()) {
 			document.querySelectorAll('li.group div.absolute').forEach((dd) => {
 				dd.style.opacity = '0';
@@ -173,13 +176,34 @@ document.addEventListener('DOMContentLoaded', function () {
 				dd.style.right = '-150px';
 				dd.style.top = '52px';
 				dd.style.width = '';
+				dd.style.transform = '';
+				dd.style.maxWidth = '';
 				dd.style.zIndex = '';
 				dd.style.background = '';
 				dd.style.borderRadius = '';
 				dd.style.boxShadow = '';
 			});
 		}
-		if (navOpen && isMobile()) closeMobileMenu();
+		// --- Improved: only close dropdown, not full mobile menu ---
+		if (isMobile()) {
+			document.querySelectorAll('li.group div.absolute').forEach((dd) => {
+				dd.style.opacity = '0';
+				dd.style.pointerEvents = 'none';
+				dd.style.position = 'absolute';
+				dd.style.left = '';
+				dd.style.right = '-150px';
+				dd.style.transform = '';
+				dd.style.top = '';
+				dd.style.width = '';
+				dd.style.maxWidth = '';
+				dd.style.zIndex = '';
+				dd.style.background = '';
+				dd.style.borderRadius = '';
+				dd.style.boxShadow = '';
+			});
+			// If you want to close mobile menu as well when outside click, uncomment below:
+			// if (navOpen) closeMobileMenu();
+		}
 	});
 
 	// --- Responsive Helper ---
@@ -191,8 +215,10 @@ document.addEventListener('DOMContentLoaded', function () {
 				dd.style.position = 'absolute';
 				dd.style.left = '';
 				dd.style.right = '-150px';
+				dd.style.transform = '';
 				dd.style.top = '';
 				dd.style.width = '';
+				dd.style.maxWidth = '';
 				dd.style.zIndex = '';
 				dd.style.background = '';
 				dd.style.borderRadius = '';
@@ -206,8 +232,10 @@ document.addEventListener('DOMContentLoaded', function () {
 				dd.style.position = 'absolute';
 				dd.style.left = '';
 				dd.style.right = '-150px';
+				dd.style.transform = '';
 				dd.style.top = '52px';
 				dd.style.width = '';
+				dd.style.maxWidth = '';
 				dd.style.zIndex = '';
 				dd.style.background = '';
 				dd.style.borderRadius = '';
