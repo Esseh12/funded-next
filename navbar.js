@@ -1,29 +1,51 @@
+// Improved Mobile Navbar: dropdown overlays below item, width matches dropdown content, normal mobile behavior
+
 document.addEventListener('DOMContentLoaded', function () {
+	// Helper: detect mobile
+	function isMobile() {
+		return window.innerWidth <= 1024;
+	}
+
 	// --- Desktop Dropdowns ---
 	document.querySelectorAll('li.group').forEach((group) => {
 		const button = group.querySelector('button');
 		const dropdown = group.querySelector('div.absolute');
-		const chevron = button.querySelector('svg'); // Find the chevron icon inside the button
+		const chevron = button && button.querySelector('svg');
 		if (!button || !dropdown || !chevron) return;
 
 		let hoverTimeout;
 
-		// Utility for desktop hover (menu stays open as you move over button/dropdown)
+		// Desktop hover logic
 		function showDropdown() {
 			clearTimeout(hoverTimeout);
 			dropdown.style.opacity = '1';
 			dropdown.style.pointerEvents = 'auto';
 			dropdown.style.top = '52px';
+			dropdown.style.left = '';
+			dropdown.style.right = '-150px';
+			dropdown.style.width = '';
+			dropdown.style.position = 'absolute';
+			dropdown.style.zIndex = '';
+			dropdown.style.background = '';
+			dropdown.style.borderRadius = '';
+			dropdown.style.boxShadow = '';
 		}
 		function hideDropdown() {
 			hoverTimeout = setTimeout(() => {
 				dropdown.style.opacity = '0';
 				dropdown.style.pointerEvents = 'none';
 				dropdown.style.top = '52px';
-			}, 120); // Small delay for ease of movement
+				dropdown.style.left = '';
+				dropdown.style.right = '-150px';
+				dropdown.style.width = '';
+				dropdown.style.position = 'absolute';
+				dropdown.style.zIndex = '';
+				dropdown.style.background = '';
+				dropdown.style.borderRadius = '';
+				dropdown.style.boxShadow = '';
+			}, 120);
 		}
 
-		// Desktop hover
 		button.addEventListener('mouseenter', () => {
 			if (!isMobile()) showDropdown();
 		});
@@ -37,27 +59,55 @@ document.addEventListener('DOMContentLoaded', function () {
 			if (!isMobile()) hideDropdown();
 		});
 
-		// --- Mobile Dropdowns ---
+		// --- Mobile Dropdown ---
 		chevron.addEventListener('click', function (e) {
-			if (!isMobile()) return; // Only for mobile
+			if (!isMobile()) return;
 			e.stopPropagation();
-			// Close other dropdowns
+
+			// Close other mobile dropdowns
 			document.querySelectorAll('li.group div.absolute').forEach((dd) => {
 				dd.style.opacity = '0';
 				dd.style.pointerEvents = 'none';
-				dd.style.top = '0px';
+				dd.style.position = 'absolute';
+				dd.style.top = '';
+				dd.style.left = '';
+				dd.style.right = '-150px';
+				dd.style.width = '';
+				dd.style.zIndex = '';
+				dd.style.background = '';
+				dd.style.borderRadius = '';
+				dd.style.boxShadow = '';
 			});
 			const isShown = dropdown.style.opacity === '1';
 			if (!isShown) {
+				// Position dropdown below button, overlay content, normal width
 				dropdown.style.opacity = '1';
 				dropdown.style.pointerEvents = 'auto';
-				dropdown.style.top = '0px'; // adjust for mobile
+				dropdown.style.position = 'absolute';
+				dropdown.style.left = '0';
+				dropdown.style.right = '0';
+				dropdown.style.top = button.offsetHeight + 'px'; // Just beneath the button
+				dropdown.style.width = 'auto'; // Use dropdown's CSS width
+				dropdown.style.zIndex = '100';
+				// dropdown.style.background = '#fff';
+				dropdown.style.borderRadius = '0 0 16px 16px';
+				dropdown.style.boxShadow = '0 4px 24px rgba(0,0,0,0.15)';
 			} else {
 				dropdown.style.opacity = '0';
 				dropdown.style.pointerEvents = 'none';
-				dropdown.style.top = '0px';
+				dropdown.style.position = 'absolute';
+				dropdown.style.left = '';
+				dropdown.style.right = '-150px';
+				dropdown.style.top = '';
+				dropdown.style.width = '';
+				dropdown.style.zIndex = '';
+				dropdown.style.background = '';
+				dropdown.style.borderRadius = '';
+				dropdown.style.boxShadow = '';
 			}
 		});
+
+		// Prevent closing when interacting inside dropdown
 		dropdown.addEventListener('click', function (e) {
 			if (isMobile()) e.stopPropagation();
 		});
@@ -70,11 +120,9 @@ document.addEventListener('DOMContentLoaded', function () {
 	function openMobileMenu() {
 		navMenu.style.opacity = '1';
 		navMenu.style.pointerEvents = 'auto';
-		navMenu.style.top = '90px'; // or '65px' for nav-sm, adjust as needed
+		navMenu.style.top = '50px';
 		navOpen = true;
 		document.body.classList.add('mobile-menu-open');
-
-		// Set opacity to 1 for all .max-nav\:opacity-0 elements (show mobile menu content)
 		document.querySelectorAll('.max-nav\\:opacity-0').forEach((el) => {
 			el.style.opacity = '1';
 		});
@@ -85,14 +133,19 @@ document.addEventListener('DOMContentLoaded', function () {
 		navMenu.style.top = '';
 		navOpen = false;
 		document.body.classList.remove('mobile-menu-open');
-		// Close any dropdowns
 		document.querySelectorAll('li.group div.absolute').forEach((dd) => {
 			dd.style.opacity = '0';
 			dd.style.pointerEvents = 'none';
-			dd.style.top = '0px';
+			dd.style.position = 'absolute';
+			dd.style.left = '';
+			dd.style.right = '-150px';
+			dd.style.top = '';
+			dd.style.width = '';
+			dd.style.zIndex = '';
+			dd.style.background = '';
+			dd.style.borderRadius = '';
+			dd.style.boxShadow = '';
 		});
-
-		// Set opacity to 0 for all .max-nav\:opacity-0 elements (hide mobile menu content)
 		document.querySelectorAll('.max-nav\\:opacity-0').forEach((el) => {
 			el.style.opacity = '0';
 		});
@@ -111,37 +164,54 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	// --- Close menus/dropdowns on outside click ---
 	document.body.addEventListener('click', function () {
-		// Desktop: close dropdowns
 		if (!isMobile()) {
 			document.querySelectorAll('li.group div.absolute').forEach((dd) => {
 				dd.style.opacity = '0';
 				dd.style.pointerEvents = 'none';
+				dd.style.position = 'absolute';
+				dd.style.left = '';
+				dd.style.right = '-150px';
 				dd.style.top = '52px';
+				dd.style.width = '';
+				dd.style.zIndex = '';
+				dd.style.background = '';
+				dd.style.borderRadius = '';
+				dd.style.boxShadow = '';
 			});
 		}
-		// Mobile: close everything
 		if (navOpen && isMobile()) closeMobileMenu();
 	});
 
 	// --- Responsive Helper ---
-	function isMobile() {
-		// You can adjust the breakpoint as needed
-		return window.innerWidth <= 1024;
-	}
-	// Optionally close desktop dropdowns on resize to mobile
 	window.addEventListener('resize', function () {
 		if (isMobile()) {
 			document.querySelectorAll('li.group div.absolute').forEach((dd) => {
 				dd.style.opacity = '0';
 				dd.style.pointerEvents = 'none';
-				dd.style.top = '0px';
+				dd.style.position = 'absolute';
+				dd.style.left = '';
+				dd.style.right = '-150px';
+				dd.style.top = '';
+				dd.style.width = '';
+				dd.style.zIndex = '';
+				dd.style.background = '';
+				dd.style.borderRadius = '';
+				dd.style.boxShadow = '';
 			});
 			closeMobileMenu();
 		} else {
 			document.querySelectorAll('li.group div.absolute').forEach((dd) => {
 				dd.style.opacity = '0';
 				dd.style.pointerEvents = 'none';
+				dd.style.position = 'absolute';
+				dd.style.left = '';
+				dd.style.right = '-150px';
 				dd.style.top = '52px';
+				dd.style.width = '';
+				dd.style.zIndex = '';
+				dd.style.background = '';
+				dd.style.borderRadius = '';
+				dd.style.boxShadow = '';
 			});
 		}
 	});
