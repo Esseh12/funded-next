@@ -1,49 +1,29 @@
 document.addEventListener('DOMContentLoaded', function () {
-	// Helper: detect mobile
-	function isMobile() {
-		return window.innerWidth <= 1024;
-	}
-
 	// --- Desktop Dropdowns ---
 	document.querySelectorAll('li.group').forEach((group) => {
 		const button = group.querySelector('button');
 		const dropdown = group.querySelector('div.absolute');
-		const chevron = button && button.querySelector('svg');
+		const chevron = button.querySelector('svg'); // Find the chevron icon inside the button
 		if (!button || !dropdown || !chevron) return;
 
 		let hoverTimeout;
 
-		// Desktop hover logic (unchanged)
+		// Utility for desktop hover (menu stays open as you move over button/dropdown)
 		function showDropdown() {
 			clearTimeout(hoverTimeout);
 			dropdown.style.opacity = '1';
 			dropdown.style.pointerEvents = 'auto';
 			dropdown.style.top = '52px';
-			dropdown.style.left = '';
-			dropdown.style.right = '-150px';
-			dropdown.style.width = '';
-			dropdown.style.position = 'absolute';
-			dropdown.style.zIndex = '';
-			dropdown.style.background = '';
-			dropdown.style.borderRadius = '';
-			dropdown.style.boxShadow = '';
 		}
 		function hideDropdown() {
 			hoverTimeout = setTimeout(() => {
 				dropdown.style.opacity = '0';
 				dropdown.style.pointerEvents = 'none';
 				dropdown.style.top = '52px';
-				dropdown.style.left = '';
-				dropdown.style.right = '-150px';
-				dropdown.style.width = '';
-				dropdown.style.position = 'absolute';
-				dropdown.style.zIndex = '';
-				dropdown.style.background = '';
-				dropdown.style.borderRadius = '';
-				dropdown.style.boxShadow = '';
-			}, 120);
+			}, 120); // Small delay for ease of movement
 		}
 
+		// Desktop hover
 		button.addEventListener('mouseenter', () => {
 			if (!isMobile()) showDropdown();
 		});
@@ -57,108 +37,127 @@ document.addEventListener('DOMContentLoaded', function () {
 			if (!isMobile()) hideDropdown();
 		});
 
-		// --- Mobile Dropdown ---
+		// --- Mobile Dropdowns (Inline Expansion) ---
 		chevron.addEventListener('click', function (e) {
-			if (!isMobile()) return;
+			if (!isMobile()) return; // Only for mobile
 			e.stopPropagation();
 
-			// Close other mobile dropdowns
-			document.querySelectorAll('li.group div.absolute').forEach((dd) => {
-				dd.style.opacity = '0';
-				dd.style.pointerEvents = 'none';
-				dd.style.position = 'absolute';
-				dd.style.left = '';
-				dd.style.right = '-150px';
-				dd.style.top = '';
-				dd.style.width = '';
-				dd.style.zIndex = '';
-				dd.style.background = '';
-				dd.style.borderRadius = '';
-				dd.style.boxShadow = '';
+			// Close other dropdowns first
+			document.querySelectorAll('li.group').forEach((otherGroup) => {
+				if (otherGroup !== group) {
+					const otherDropdown = otherGroup.querySelector('div.absolute');
+					const otherChevron = otherGroup.querySelector('button svg');
+					if (otherDropdown && otherChevron) {
+						// Reset to closed state
+						otherDropdown.style.position = 'absolute';
+						otherDropdown.style.opacity = '0';
+						otherDropdown.style.pointerEvents = 'none';
+						otherDropdown.style.top = '0px';
+						otherDropdown.style.maxHeight = '0';
+						otherDropdown.style.overflow = 'hidden';
+						otherDropdown.style.transition =
+							'max-height 0.3s ease, opacity 0.3s ease';
+						// Reset chevron rotation
+						otherChevron.style.transform = 'rotate(0deg)';
+						otherChevron.style.transition = 'transform 0.3s ease';
+					}
+				}
 			});
-			const isShown = dropdown.style.opacity === '1';
-			if (!isShown) {
-				// --- Improved mobile dropdown positioning & width ---
+
+			const isOpen =
+				dropdown.style.maxHeight && dropdown.style.maxHeight !== '0px';
+
+			if (!isOpen) {
+				// Open dropdown
+				dropdown.style.position = 'static'; // Make it part of normal flow
 				dropdown.style.opacity = '1';
 				dropdown.style.pointerEvents = 'auto';
-				dropdown.style.position = 'absolute';
-				dropdown.style.left = '45%';
-				dropdown.style.transform = 'translateX(-50%)';
-				dropdown.style.top = button.offsetHeight + 'px';
-				dropdown.style.width = Math.min(window.innerWidth - 32, 450) + 'px'; // max 300px, never exceeds screen minus 32px margin
-				dropdown.style.maxWidth = 'calc(100vw - 32px)';
-				dropdown.style.zIndex = '100';
-				dropdown.style.background = '#fff';
-				dropdown.style.borderRadius = '0 0 16px 16px';
-				dropdown.style.boxShadow = '0 4px 24px rgba(0,0,0,0.15)';
+				dropdown.style.top = 'auto';
+				dropdown.style.maxHeight = dropdown.scrollHeight + 'px'; // Set to content height
+				dropdown.style.overflow = 'visible';
+				dropdown.style.transition = 'max-height 0.3s ease, opacity 0.3s ease';
+
+				// Rotate chevron
+				chevron.style.transform = 'rotate(180deg)';
+				chevron.style.transition = 'transform 0.3s ease';
 			} else {
+				// Close dropdown
+				dropdown.style.maxHeight = '0';
+				dropdown.style.overflow = 'hidden';
 				dropdown.style.opacity = '0';
-				dropdown.style.pointerEvents = 'none';
-				dropdown.style.position = 'absolute';
-				dropdown.style.left = '';
-				dropdown.style.right = '-150px';
-				dropdown.style.transform = '';
-				dropdown.style.top = '';
-				dropdown.style.width = '';
-				dropdown.style.maxWidth = '';
-				dropdown.style.zIndex = '';
-				dropdown.style.background = '';
-				dropdown.style.borderRadius = '';
-				dropdown.style.boxShadow = '';
+				dropdown.style.transition = 'max-height 0.3s ease, opacity 0.3s ease';
+
+				// Reset chevron
+				chevron.style.transform = 'rotate(0deg)';
+
+				// After animation, reset to absolute positioning
+				setTimeout(() => {
+					dropdown.style.position = 'absolute';
+					dropdown.style.pointerEvents = 'none';
+					dropdown.style.top = '0px';
+				}, 300);
 			}
 		});
 
-		// Prevent closing when interacting inside dropdown
 		dropdown.addEventListener('click', function (e) {
 			if (isMobile()) e.stopPropagation();
 		});
 	});
 
-	// --- Hamburger Mobile Menu ---
+	// --- Hamburger Mobile Menu (Keep normal sidebar behavior) ---
 	const mobileMenuBtn = document.querySelector('button.nav\\:hidden');
 	const navMenu = document.querySelector('nav');
 	let navOpen = false;
+
 	function openMobileMenu() {
 		navMenu.style.opacity = '1';
 		navMenu.style.pointerEvents = 'auto';
-		navMenu.style.top = '50px';
+		navMenu.style.top = '57px'; // Keep original positioning
+		navMenu.style.maxWidth = '100VW'; // Keep original width
 		navOpen = true;
 		document.body.classList.add('mobile-menu-open');
+
+		// Set opacity to 1 for all .max-nav\:opacity-0 elements (show mobile menu content)
 		document.querySelectorAll('.max-nav\\:opacity-0').forEach((el) => {
 			el.style.opacity = '1';
 		});
 	}
+
 	function closeMobileMenu() {
 		navMenu.style.opacity = '0';
 		navMenu.style.pointerEvents = 'none';
-		navMenu.style.top = '';
+		navMenu.style.top = ''; // Reset to original
 		navOpen = false;
 		document.body.classList.remove('mobile-menu-open');
-		document.querySelectorAll('li.group div.absolute').forEach((dd) => {
-			dd.style.opacity = '0';
-			dd.style.pointerEvents = 'none';
-			dd.style.position = 'absolute';
-			dd.style.left = '';
-			dd.style.right = '-150px';
-			dd.style.transform = '';
-			dd.style.top = '';
-			dd.style.width = '';
-			dd.style.maxWidth = '';
-			dd.style.zIndex = '';
-			dd.style.background = '';
-			dd.style.borderRadius = '';
-			dd.style.boxShadow = '';
+
+		// Close any open dropdowns
+		document.querySelectorAll('li.group').forEach((group) => {
+			const dropdown = group.querySelector('div.absolute');
+			const chevron = group.querySelector('button svg');
+			if (dropdown && chevron) {
+				dropdown.style.position = 'absolute';
+				dropdown.style.opacity = '0';
+				dropdown.style.pointerEvents = 'none';
+				dropdown.style.top = '0px';
+				dropdown.style.maxHeight = '0';
+				dropdown.style.overflow = 'hidden';
+				chevron.style.transform = 'rotate(0deg)';
+			}
 		});
+
+		// Set opacity to 0 for all .max-nav\:opacity-0 elements (hide mobile menu content)
 		document.querySelectorAll('.max-nav\\:opacity-0').forEach((el) => {
 			el.style.opacity = '0';
 		});
 	}
+
 	if (mobileMenuBtn && navMenu) {
 		mobileMenuBtn.addEventListener('click', function (e) {
 			e.stopPropagation();
 			navOpen ? closeMobileMenu() : openMobileMenu();
 		});
 	}
+
 	if (navMenu) {
 		navMenu.addEventListener('click', function (e) {
 			if (isMobile()) e.stopPropagation();
@@ -166,81 +165,56 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 
 	// --- Close menus/dropdowns on outside click ---
-	document.body.addEventListener('click', function (e) {
+	document.body.addEventListener('click', function () {
+		// Desktop: close dropdowns
 		if (!isMobile()) {
 			document.querySelectorAll('li.group div.absolute').forEach((dd) => {
 				dd.style.opacity = '0';
 				dd.style.pointerEvents = 'none';
-				dd.style.position = 'absolute';
-				dd.style.left = '';
-				dd.style.right = '-150px';
 				dd.style.top = '52px';
-				dd.style.width = '';
-				dd.style.transform = '';
-				dd.style.maxWidth = '';
-				dd.style.zIndex = '';
-				dd.style.background = '';
-				dd.style.borderRadius = '';
-				dd.style.boxShadow = '';
 			});
 		}
-		// --- Improved: only close dropdown, not full mobile menu ---
-		if (isMobile()) {
-			document.querySelectorAll('li.group div.absolute').forEach((dd) => {
-				dd.style.opacity = '0';
-				dd.style.pointerEvents = 'none';
-				dd.style.position = 'absolute';
-				dd.style.left = '';
-				dd.style.right = '-150px';
-				dd.style.transform = '';
-				dd.style.top = '';
-				dd.style.width = '';
-				dd.style.maxWidth = '';
-				dd.style.zIndex = '';
-				dd.style.background = '';
-				dd.style.borderRadius = '';
-				dd.style.boxShadow = '';
-			});
-			// If you want to close mobile menu as well when outside click, uncomment below:
-			// if (navOpen) closeMobileMenu();
-		}
+		// Mobile: close hamburger menu but keep dropdowns working normally
+		if (navOpen && isMobile()) closeMobileMenu();
 	});
 
 	// --- Responsive Helper ---
+	function isMobile() {
+		// You can adjust the breakpoint as needed
+		return window.innerWidth <= 1024;
+	}
+
+	// Handle resize events
 	window.addEventListener('resize', function () {
 		if (isMobile()) {
+			// Reset desktop dropdowns for mobile
 			document.querySelectorAll('li.group div.absolute').forEach((dd) => {
+				dd.style.position = 'absolute';
 				dd.style.opacity = '0';
 				dd.style.pointerEvents = 'none';
-				dd.style.position = 'absolute';
-				dd.style.left = '';
-				dd.style.right = '-150px';
-				dd.style.transform = '';
-				dd.style.top = '';
-				dd.style.width = '';
-				dd.style.maxWidth = '';
-				dd.style.zIndex = '';
-				dd.style.background = '';
-				dd.style.borderRadius = '';
-				dd.style.boxShadow = '';
+				dd.style.top = '0px';
+				dd.style.maxHeight = '0';
 			});
-			closeMobileMenu();
+			// Reset chevrons
+			document.querySelectorAll('li.group button svg').forEach((chevron) => {
+				chevron.style.transform = 'rotate(0deg)';
+			});
 		} else {
+			// Reset mobile dropdowns for desktop
 			document.querySelectorAll('li.group div.absolute').forEach((dd) => {
+				dd.style.position = 'absolute';
 				dd.style.opacity = '0';
 				dd.style.pointerEvents = 'none';
-				dd.style.position = 'absolute';
-				dd.style.left = '';
-				dd.style.right = '-150px';
-				dd.style.transform = '';
 				dd.style.top = '52px';
-				dd.style.width = '';
-				dd.style.maxWidth = '';
-				dd.style.zIndex = '';
-				dd.style.background = '';
-				dd.style.borderRadius = '';
-				dd.style.boxShadow = '';
+				dd.style.maxHeight = '';
+				dd.style.overflow = '';
 			});
+			// Reset chevrons
+			document.querySelectorAll('li.group button svg').forEach((chevron) => {
+				chevron.style.transform = 'rotate(0deg)';
+			});
+			// Close mobile menu
+			closeMobileMenu();
 		}
 	});
 });

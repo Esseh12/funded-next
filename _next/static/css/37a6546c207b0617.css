@@ -1,1 +1,81 @@
-.container-fluid{margin-left:auto;margin-right:auto;padding-left:1rem;padding-right:1rem;width:100%}@media (min-width:1024px){.container-fluid{min-width:992px;padding-left:0;padding-right:0;width:80%}}@media (min-width:1280px){.container-fluid{min-width:1170px}}@media (max-width:576px){.hall-of-fame-swiper .swiper-pagination-bullet{background:#353535!important;height:11px;width:11px}}@media (min-width:768px){.hall-of-fame-swiper .swiper-pagination-bullet{background:#353535!important;height:11px;width:11px}}@media (min-width:992px){.hall-of-fame-swiper .swiper-pagination-bullet{background:#353535!important;height:1px;left:0!important;width:12px}.hall-of-fame-swiper .swiper-pagination{text-align:left!important}}@media (min-width:1537px){.hall-of-fame-swiper .swiper-pagination-bullet{background:#353535!important;height:15px;left:0!important;margin:0 6px!important;width:15px}}.trader-certificates .swiper-pagination{text-align:right!important}.trader-certificates .swiper-pagination-bullet{align-content:center!important;align-items:center!important;background:#f0f0f0!important;color:#000!important;display:flex!important;font-size:14px!important;height:27px!important;justify-content:center!important;margin:0 8px!important;opacity:1!important;text-align:center!important;width:27px!important}.trader-certificates .swiper-pagination{align-content:stretch!important;align-items:center!important;display:flex!important;justify-content:flex-end!important}.trader-certificates .swiper-pagination-bullet-active{background:#635bff!important;color:#fff!important}
+.container-fluid {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	width: 100%;
+}
+@media (min-width: 1024px) {
+	.container-fluid {
+		min-width: 992px;
+		padding-left: 0;
+		padding-right: 0;
+		width: 80%;
+	}
+}
+@media (min-width: 1280px) {
+	.container-fluid {
+		min-width: 1170px;
+	}
+}
+@media (max-width: 576px) {
+	.hall-of-fame-swiper .swiper-pagination-bullet {
+		background: #353535 !important;
+		height: 11px;
+		width: 11px;
+	}
+}
+@media (min-width: 768px) {
+	.hall-of-fame-swiper .swiper-pagination-bullet {
+		background: #353535 !important;
+		height: 11px;
+		width: 11px;
+	}
+}
+@media (min-width: 992px) {
+	.hall-of-fame-swiper .swiper-pagination-bullet {
+		background: #353535 !important;
+		height: 1px;
+		left: 0 !important;
+		width: 12px;
+	}
+	.hall-of-fame-swiper .swiper-pagination {
+		text-align: left !important;
+	}
+}
+@media (min-width: 1537px) {
+	.hall-of-fame-swiper .swiper-pagination-bullet {
+		background: #353535 !important;
+		height: 15px;
+		left: 0 !important;
+		margin: 0 6px !important;
+		width: 15px;
+	}
+}
+.trader-certificates .swiper-pagination {
+	text-align: right !important;
+}
+.trader-certificates .swiper-pagination-bullet {
+	align-content: center !important;
+	align-items: center !important;
+	background: #f0f0f0 !important;
+	color: #000 !important;
+	display: flex !important;
+	font-size: 14px !important;
+	height: 27px !important;
+	justify-content: center !important;
+	margin: 0 8px !important;
+	opacity: 1 !important;
+	text-align: center !important;
+	width: 27px !important;
+}
+.trader-certificates .swiper-pagination {
+	align-content: stretch !important;
+	align-items: center !important;
+	display: flex !important;
+	justify-content: flex-end !important;
+}
+.trader-certificates .swiper-pagination-bullet-active {
+	background: #635bff !important;
+	color: #fff !important;
+}
