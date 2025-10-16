@@ -218,3 +218,37 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	});
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+	const buttons = document.querySelectorAll('section button');
+
+	buttons.forEach((button) => {
+		button.addEventListener('click', function () {
+			const content = this.nextElementSibling; // the div with answer text
+			const icon = this.querySelector('svg path');
+
+			// Close all other open answers
+			buttons.forEach((btn) => {
+				const otherContent = btn.nextElementSibling;
+				const otherIcon = btn.querySelector('svg path');
+
+				if (otherContent !== content) {
+					otherContent.style.maxHeight = null;
+					otherContent.style.transition = 'max-height 0.3s ease';
+					otherIcon.setAttribute('d', 'M12 5V19M5 12H19'); // reset to plus
+				}
+			});
+
+			// Toggle the clicked one
+			if (content.style.maxHeight) {
+				// currently open -> close
+				content.style.maxHeight = null;
+				icon.setAttribute('d', 'M12 5V19M5 12H19'); // plus icon
+			} else {
+				// open -> expand to scrollHeight
+				content.style.maxHeight = content.scrollHeight + 'px';
+				icon.setAttribute('d', 'M5 12H19'); // minus icon
+			}
+		});
+	});
+});

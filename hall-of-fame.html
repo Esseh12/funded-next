@@ -4,6 +4,9 @@
 <head>
   <meta charSet="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
   <link rel="preload" href="_next/static/media/24c4d94a40e79814-s.p.ttf" as="font" type="font/ttf" />
   <link rel="preload" href="_next/static/media/2775818c6623a49a-s.p.woff2" as="font" type="font/woff2" />
   <link rel="preload" href="_next/static/media/46b36286e2ea994a-s.p.woff2" as="font" type="font/woff2" />
@@ -29,6 +32,7 @@
   <link rel="stylesheet" href="_next/static/css/db2cdcbd652a7a7e.css" data-precedence="next" />
   <link rel="stylesheet" href="_next/static/css/ce423d68e721ceff.css" data-precedence="next" />
   <link rel="stylesheet" href="_next/static/css/37a6546c207b0617.css" data-precedence="next" />
+
   <link rel="preload" as="script" fetchPriority="low" href="_next/static/chunks/webpack-2d8b8cbc12de4c89.js" />
   <script src="_next/static/chunks/fd9d1056-18799b40052dc88f.js" async=""
     type="f0127106dab1e5bd2e5fe452-text/javascript"></script>
@@ -152,6 +156,78 @@
   <script src="navbar.js"></script>
   <script src="_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""
     type="f0127106dab1e5bd2e5fe452-text/javascript"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      new Swiper('.hall-of-fame-swiper', {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 20,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        },
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false
+        }
+      });
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      new Swiper('.testimonial-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        },
+        breakpoints: {
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+          1280: { slidesPerView: 4 }
+        },
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false
+        }
+      });
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      new Swiper('.trader-certificates', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+          renderBullet: function (index, className) {
+            // index is 0-based, so add 1 for user-friendly numbering
+            return '<span class="' + className + '">' + (index + 1) + '</span>';
+          }
+        },
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false
+        }
+      });
+    });
+  </script>
 </head>
 
 <body class="__variable_9b9fd1 __variable_a213da __className_a1b627 __variable_663d34 __variable_67edef ">
@@ -1130,419 +1206,478 @@
           class="w-full lg:w-6/12 2xl:w-5/12 flex flex-col justify-center items-center lg:items-start lg:justify-center lg:pl-[80px] 2xl:pl-[190px]">
           <img alt="Star Icon Representing view FundedNext Most Successful Traders" loading="lazy" width="70"
             height="24" decoding="async" data-nimg="1" class="h-[15px] lg:h-[20px] 2xl:h-[23px]"
-            style="color:transparent" src="https://dirslur24ie1a.cloudfront.net/fundednext/dice-icon.svg" />
+            src="https://dirslur24ie1a.cloudfront.net/fundednext/dice-icon.svg" style="color: transparent;">
           <h2
             class="text-xl lg:text-[34px] 2xl:text-[48px] text-center lg:text-left  font-bold leading-[30px] lg:leading-[47px] 2xl:leading-[62px]  w-8/12 2xl:w-11/12 pt-2 lg:pt-8 pb-3 lg:pb-4">
             Meet Successful FundedNext Traders</h2>
           <p
             class="text-[#606060] lg:text-base 2xl:text-lg text-center lg:text-left leading-[22px] lg:leading-7 w-11/12 2xl:w-10/12 pb-[15px] lg:pb-4">
-            Discover the hidden strategies and insights that have fueled our traders&#x27; success on their remarkable
-            trading journey with FundedNext.</p><img alt="A team of successful FundedNext traders" loading="lazy"
-            width="330" height="199" decoding="async" data-nimg="1"
+            Discover the hidden strategies and insights that have fueled our traders' success on their remarkable
+            trading
+            journey with FundedNext.</p><img alt="A team of successful FundedNext traders" loading="lazy" width="330"
+            height="199" decoding="async" data-nimg="1"
             class="w-[109px] lg:w-[209px] 2xl:w-[264px] lg:-translate-x-[22px]  2xl:-translate-x-[27px]"
-            style="color:transparent" src="https://dirslur24ie1a.cloudfront.net/fundednext/traders-icon.svg" />
+            src="https://dirslur24ie1a.cloudfront.net/fundednext/traders-icon.svg" style="color: transparent;">
         </div>
         <div class="w-full lg:w-6/12 2xl:w-7/12 pt-10 2xl:pl-28">
-          <div class="swiper hall-of-fame-swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0">
+          <div class="swiper swiper-initialized swiper-horizontal hall-of-fame-swiper">
+            <div class="swiper-wrapper"
+              style="transition-duration: 0ms; transform: translate3d(-8334.38px, 0px, 0px); transition-delay: 0ms;">
+              <div class="swiper-slide mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0" data-swiper-slide-index="8"
+                style="width: 545.625px; margin-right: 10px;">
                 <div class="">
                   <div class="w-full"><img alt="Thumbnail" loading="lazy" width="1280" height="720" decoding="async"
-                      data-nimg="1" class="rounded-lg" style="color:transparent"
-                      srcSet="_next/meet-trader-1.jpeg 1x, _next/meet-trader-1.jpeg 2x"
-                      src="_next/meet-trader-1.jpeg" /></div><button type="button"
+                      data-nimg="1" class="rounded-lg"
+                      src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2FAshraf_2_copy.jpg&amp;w=3840&amp;q=75"
+                      style="color: transparent;"></div><button type="button"
                     class="absolute left-0 top-0 flex h-full w-full flex-col justify-end rounded-lg text-white md:pb-[22px] md:pl-[16px] lg:pb-[14px] lg:pl-[38px]"
-                    style="background-image:linear-gradient(180deg, rgb(255 0 0 / 0%) 57%, #000000 100%)">
+                    style="background-image: linear-gradient(rgba(255, 0, 0, 0) 57%, rgb(0, 0, 0) 100%);">
                     <div class="flex h-full w-full cursor-pointer items-center justify-center md:hidden"><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
-                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]" style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" /></div>
+                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]"
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
+                    </div>
                     <div class=" hidden cursor-pointer items-center md:flex lg:pt-[6px]">
                       <p class="text-[15px] font-medium text-white underline">Watch the video</p><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
                         decoding="async" data-nimg="1"
                         class="ml-[9px] h-[22px] w-[22px] lg:h-[28px] lg:w-[28px] 2xl:h-[38px]  2xl:w-[38px]"
-                        style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" />
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
                     </div>
                   </button>
                 </div>
               </div>
-              <div class="swiper-slide mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0">
+              <div class="swiper-slide mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0" data-swiper-slide-index="9"
+                style="width: 545.625px; margin-right: 10px;">
                 <div class="">
                   <div class="w-full"><img alt="Thumbnail" loading="lazy" width="1280" height="720" decoding="async"
-                      data-nimg="1" class="rounded-lg" style="color:transparent"
-                      srcSet="_next/meet-trader-2.jpeg 1x, _next/meet-trader-2.jpeg 2x"
-                      src="_next/meet-trader-2.jpeg" /></div><button type="button"
+                      data-nimg="1" class="rounded-lg"
+                      src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2FThumbnail_copy%2520(2).jpg&amp;w=3840&amp;q=75"
+                      style="color: transparent;"></div><button type="button"
                     class="absolute left-0 top-0 flex h-full w-full flex-col justify-end rounded-lg text-white md:pb-[22px] md:pl-[16px] lg:pb-[14px] lg:pl-[38px]"
-                    style="background-image:linear-gradient(180deg, rgb(255 0 0 / 0%) 57%, #000000 100%)">
+                    style="background-image: linear-gradient(rgba(255, 0, 0, 0) 57%, rgb(0, 0, 0) 100%);">
                     <div class="flex h-full w-full cursor-pointer items-center justify-center md:hidden"><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
-                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]" style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" /></div>
+                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]"
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
+                    </div>
                     <div class=" hidden cursor-pointer items-center md:flex lg:pt-[6px]">
                       <p class="text-[15px] font-medium text-white underline">Watch the video</p><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
                         decoding="async" data-nimg="1"
                         class="ml-[9px] h-[22px] w-[22px] lg:h-[28px] lg:w-[28px] 2xl:h-[38px]  2xl:w-[38px]"
-                        style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" />
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
                     </div>
                   </button>
                 </div>
               </div>
-              <div class="swiper-slide mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0">
+              <div class="swiper-slide mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0" data-swiper-slide-index="10"
+                style="width: 545.625px; margin-right: 10px;">
                 <div class="">
                   <div class="w-full"><img alt="Thumbnail" loading="lazy" width="1280" height="720" decoding="async"
-                      data-nimg="1" class="rounded-lg" style="color:transparent"
-                      srcSet="_next/meet-trader-3.jpeg 1x, _next/meet-trader-3.jpeg 2x"
-                      src="_next/meet-trader-3.jpeg" /></div><button type="button"
+                      data-nimg="1" class="rounded-lg"
+                      src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fslider-trader-23423.jpg&amp;w=3840&amp;q=75"
+                      style="color: transparent;"></div><button type="button"
                     class="absolute left-0 top-0 flex h-full w-full flex-col justify-end rounded-lg text-white md:pb-[22px] md:pl-[16px] lg:pb-[14px] lg:pl-[38px]"
-                    style="background-image:linear-gradient(180deg, rgb(255 0 0 / 0%) 57%, #000000 100%)">
+                    style="background-image: linear-gradient(rgba(255, 0, 0, 0) 57%, rgb(0, 0, 0) 100%);">
                     <div class="flex h-full w-full cursor-pointer items-center justify-center md:hidden"><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
-                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]" style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" /></div>
+                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]"
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
+                    </div>
                     <div class=" hidden cursor-pointer items-center md:flex lg:pt-[6px]">
                       <p class="text-[15px] font-medium text-white underline">Watch the video</p><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
                         decoding="async" data-nimg="1"
                         class="ml-[9px] h-[22px] w-[22px] lg:h-[28px] lg:w-[28px] 2xl:h-[38px]  2xl:w-[38px]"
-                        style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" />
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
                     </div>
                   </button>
                 </div>
               </div>
-              <div class="swiper-slide mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0">
+              <div class="swiper-slide mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0" data-swiper-slide-index="11"
+                style="width: 545.625px; margin-right: 10px;">
                 <div class="">
                   <div class="w-full"><img alt="Thumbnail" loading="lazy" width="1280" height="720" decoding="async"
-                      data-nimg="1" class="rounded-lg" style="color:transparent"
-                      srcSet="_next/meet-trader-4.jpeg 1x, _next/meet-trader-4.jpeg 2x"
-                      src="_next/meet-trader-4.jpeg" /></div><button type="button"
+                      data-nimg="1" class="rounded-lg"
+                      src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fslider-trader-2342333.jpg&amp;w=3840&amp;q=75"
+                      style="color: transparent;"></div><button type="button"
                     class="absolute left-0 top-0 flex h-full w-full flex-col justify-end rounded-lg text-white md:pb-[22px] md:pl-[16px] lg:pb-[14px] lg:pl-[38px]"
-                    style="background-image:linear-gradient(180deg, rgb(255 0 0 / 0%) 57%, #000000 100%)">
+                    style="background-image: linear-gradient(rgba(255, 0, 0, 0) 57%, rgb(0, 0, 0) 100%);">
                     <div class="flex h-full w-full cursor-pointer items-center justify-center md:hidden"><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
-                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]" style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" /></div>
+                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]"
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
+                    </div>
                     <div class=" hidden cursor-pointer items-center md:flex lg:pt-[6px]">
                       <p class="text-[15px] font-medium text-white underline">Watch the video</p><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
                         decoding="async" data-nimg="1"
                         class="ml-[9px] h-[22px] w-[22px] lg:h-[28px] lg:w-[28px] 2xl:h-[38px]  2xl:w-[38px]"
-                        style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" />
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
                     </div>
                   </button>
                 </div>
               </div>
-              <div class="swiper-slide mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0">
+              <div class="swiper-slide mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0" data-swiper-slide-index="12"
+                style="width: 545.625px; margin-right: 10px;">
                 <div class="">
                   <div class="w-full"><img alt="Thumbnail" loading="lazy" width="1280" height="720" decoding="async"
-                      data-nimg="1" class="rounded-lg" style="color:transparent"
-                      srcSet="_next/meet-trader-5.jpeg 1x, _next/meet-trader-5.jpeg 2x"
-                      src="_next/meet-trader-5.jpeg" /></div><button type="button"
+                      data-nimg="1" class="rounded-lg"
+                      src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault.jpg&amp;w=3840&amp;q=75"
+                      style="color: transparent;"></div><button type="button"
                     class="absolute left-0 top-0 flex h-full w-full flex-col justify-end rounded-lg text-white md:pb-[22px] md:pl-[16px] lg:pb-[14px] lg:pl-[38px]"
-                    style="background-image:linear-gradient(180deg, rgb(255 0 0 / 0%) 57%, #000000 100%)">
+                    style="background-image: linear-gradient(rgba(255, 0, 0, 0) 57%, rgb(0, 0, 0) 100%);">
                     <div class="flex h-full w-full cursor-pointer items-center justify-center md:hidden"><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
-                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]" style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" /></div>
+                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]"
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
+                    </div>
                     <div class=" hidden cursor-pointer items-center md:flex lg:pt-[6px]">
                       <p class="text-[15px] font-medium text-white underline">Watch the video</p><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
                         decoding="async" data-nimg="1"
                         class="ml-[9px] h-[22px] w-[22px] lg:h-[28px] lg:w-[28px] 2xl:h-[38px]  2xl:w-[38px]"
-                        style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" />
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
                     </div>
                   </button>
                 </div>
               </div>
-              <div class="swiper-slide mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0">
+              <div class="swiper-slide mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0" data-swiper-slide-index="13"
+                style="width: 545.625px; margin-right: 10px;">
                 <div class="">
                   <div class="w-full"><img alt="Thumbnail" loading="lazy" width="1280" height="720" decoding="async"
-                      data-nimg="1" class="rounded-lg" style="color:transparent"
-                      srcSet="_next/FundedNext_Meet_The_Trader_-_Austin_Fig.jpeg 1x, _next/FundedNext_Meet_The_Trader_-_Austin_Fig.jpeg 2x"
-                      src="_next/FundedNext_Meet_The_Trader_-_Austin_Fig.jpeg" /></div><button type="button"
+                      data-nimg="1" class="rounded-lg"
+                      src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_1.jpg&amp;w=3840&amp;q=75"
+                      style="color: transparent;"></div><button type="button"
                     class="absolute left-0 top-0 flex h-full w-full flex-col justify-end rounded-lg text-white md:pb-[22px] md:pl-[16px] lg:pb-[14px] lg:pl-[38px]"
-                    style="background-image:linear-gradient(180deg, rgb(255 0 0 / 0%) 57%, #000000 100%)">
+                    style="background-image: linear-gradient(rgba(255, 0, 0, 0) 57%, rgb(0, 0, 0) 100%);">
                     <div class="flex h-full w-full cursor-pointer items-center justify-center md:hidden"><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
-                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]" style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" /></div>
+                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]"
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
+                    </div>
                     <div class=" hidden cursor-pointer items-center md:flex lg:pt-[6px]">
                       <p class="text-[15px] font-medium text-white underline">Watch the video</p><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
                         decoding="async" data-nimg="1"
                         class="ml-[9px] h-[22px] w-[22px] lg:h-[28px] lg:w-[28px] 2xl:h-[38px]  2xl:w-[38px]"
-                        style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" />
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
                     </div>
                   </button>
                 </div>
               </div>
-              <div class="swiper-slide mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0">
+              <div class="swiper-slide mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0" data-swiper-slide-index="14"
+                style="width: 545.625px; margin-right: 10px;">
                 <div class="">
                   <div class="w-full"><img alt="Thumbnail" loading="lazy" width="1280" height="720" decoding="async"
-                      data-nimg="1" class="rounded-lg" style="color:transparent"
-                      srcSet="_next/Thumbnail_copy.jpeg 1x, _next/Thumbnail_copy.jpeg 2x"
-                      src="_next/Thumbnail_copy.jpeg" /></div><button type="button"
+                      data-nimg="1" class="rounded-lg"
+                      src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_2.jpg&amp;w=3840&amp;q=75"
+                      style="color: transparent;"></div><button type="button"
                     class="absolute left-0 top-0 flex h-full w-full flex-col justify-end rounded-lg text-white md:pb-[22px] md:pl-[16px] lg:pb-[14px] lg:pl-[38px]"
-                    style="background-image:linear-gradient(180deg, rgb(255 0 0 / 0%) 57%, #000000 100%)">
+                    style="background-image: linear-gradient(rgba(255, 0, 0, 0) 57%, rgb(0, 0, 0) 100%);">
                     <div class="flex h-full w-full cursor-pointer items-center justify-center md:hidden"><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
-                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]" style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" /></div>
+                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]"
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
+                    </div>
                     <div class=" hidden cursor-pointer items-center md:flex lg:pt-[6px]">
                       <p class="text-[15px] font-medium text-white underline">Watch the video</p><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
                         decoding="async" data-nimg="1"
                         class="ml-[9px] h-[22px] w-[22px] lg:h-[28px] lg:w-[28px] 2xl:h-[38px]  2xl:w-[38px]"
-                        style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" />
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
                     </div>
                   </button>
                 </div>
               </div>
-              <div class="swiper-slide mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0">
+              <div class="swiper-slide mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0" data-swiper-slide-index="15"
+                style="width: 545.625px; margin-right: 10px;">
                 <div class="">
                   <div class="w-full"><img alt="Thumbnail" loading="lazy" width="1280" height="720" decoding="async"
-                      data-nimg="1" class="rounded-lg" style="color:transparent"
-                      srcSet="_next/Thumbnail_copy%EF%B9%AA20(1).jpeg 1x, _next/Thumbnail_copy%EF%B9%AA20(1).jpeg 2x"
-                      src="_next/Thumbnail_copy%EF%B9%AA20(1).jpeg" /></div><button type="button"
+                      data-nimg="1" class="rounded-lg"
+                      src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_3.jpg&amp;w=3840&amp;q=75"
+                      style="color: transparent;"></div><button type="button"
                     class="absolute left-0 top-0 flex h-full w-full flex-col justify-end rounded-lg text-white md:pb-[22px] md:pl-[16px] lg:pb-[14px] lg:pl-[38px]"
-                    style="background-image:linear-gradient(180deg, rgb(255 0 0 / 0%) 57%, #000000 100%)">
+                    style="background-image: linear-gradient(rgba(255, 0, 0, 0) 57%, rgb(0, 0, 0) 100%);">
                     <div class="flex h-full w-full cursor-pointer items-center justify-center md:hidden"><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
-                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]" style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" /></div>
+                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]"
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
+                    </div>
                     <div class=" hidden cursor-pointer items-center md:flex lg:pt-[6px]">
                       <p class="text-[15px] font-medium text-white underline">Watch the video</p><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
                         decoding="async" data-nimg="1"
                         class="ml-[9px] h-[22px] w-[22px] lg:h-[28px] lg:w-[28px] 2xl:h-[38px]  2xl:w-[38px]"
-                        style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" />
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
                     </div>
                   </button>
                 </div>
               </div>
-              <div class="swiper-slide mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0">
+              <div class="swiper-slide mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0" data-swiper-slide-index="16"
+                style="width: 545.625px; margin-right: 10px;">
                 <div class="">
                   <div class="w-full"><img alt="Thumbnail" loading="lazy" width="1280" height="720" decoding="async"
-                      data-nimg="1" class="rounded-lg" style="color:transparent"
-                      srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2FAshraf_2_copy.jpg&amp;w=1920&amp;q=75 1x, _next/Ashraf_2_copy.jpeg 2x"
-                      src="_next/Ashraf_2_copy.jpeg" /></div><button type="button"
+                      data-nimg="1" class="rounded-lg"
+                      src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_4.jpg&amp;w=3840&amp;q=75"
+                      style="color: transparent;"></div><button type="button"
                     class="absolute left-0 top-0 flex h-full w-full flex-col justify-end rounded-lg text-white md:pb-[22px] md:pl-[16px] lg:pb-[14px] lg:pl-[38px]"
-                    style="background-image:linear-gradient(180deg, rgb(255 0 0 / 0%) 57%, #000000 100%)">
+                    style="background-image: linear-gradient(rgba(255, 0, 0, 0) 57%, rgb(0, 0, 0) 100%);">
                     <div class="flex h-full w-full cursor-pointer items-center justify-center md:hidden"><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
-                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]" style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" /></div>
+                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]"
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
+                    </div>
                     <div class=" hidden cursor-pointer items-center md:flex lg:pt-[6px]">
                       <p class="text-[15px] font-medium text-white underline">Watch the video</p><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
                         decoding="async" data-nimg="1"
                         class="ml-[9px] h-[22px] w-[22px] lg:h-[28px] lg:w-[28px] 2xl:h-[38px]  2xl:w-[38px]"
-                        style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" />
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
                     </div>
                   </button>
                 </div>
               </div>
-              <div class="swiper-slide mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0">
+              <div class="swiper-slide mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0" data-swiper-slide-index="0"
+                style="width: 545.625px; margin-right: 10px;">
                 <div class="">
                   <div class="w-full"><img alt="Thumbnail" loading="lazy" width="1280" height="720" decoding="async"
-                      data-nimg="1" class="rounded-lg" style="color:transparent"
-                      srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2FThumbnail_copy%2520(2).jpg&amp;w=1920&amp;q=75 1x, _next/Thumbnail_copy%EF%B9%AA20(2).jpeg 2x"
-                      src="_next/Thumbnail_copy%EF%B9%AA20(2).jpeg" /></div><button type="button"
+                      data-nimg="1" class="rounded-lg"
+                      src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmeet-trader-1.jpg&amp;w=3840&amp;q=75"
+                      style="color: transparent;"></div><button type="button"
                     class="absolute left-0 top-0 flex h-full w-full flex-col justify-end rounded-lg text-white md:pb-[22px] md:pl-[16px] lg:pb-[14px] lg:pl-[38px]"
-                    style="background-image:linear-gradient(180deg, rgb(255 0 0 / 0%) 57%, #000000 100%)">
+                    style="background-image: linear-gradient(rgba(255, 0, 0, 0) 57%, rgb(0, 0, 0) 100%);">
                     <div class="flex h-full w-full cursor-pointer items-center justify-center md:hidden"><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
-                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]" style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" /></div>
+                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]"
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
+                    </div>
                     <div class=" hidden cursor-pointer items-center md:flex lg:pt-[6px]">
                       <p class="text-[15px] font-medium text-white underline">Watch the video</p><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
                         decoding="async" data-nimg="1"
                         class="ml-[9px] h-[22px] w-[22px] lg:h-[28px] lg:w-[28px] 2xl:h-[38px]  2xl:w-[38px]"
-                        style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" />
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
                     </div>
                   </button>
                 </div>
               </div>
-              <div class="swiper-slide mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0">
+              <div class="swiper-slide mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0" data-swiper-slide-index="1"
+                style="width: 545.625px; margin-right: 10px;">
                 <div class="">
                   <div class="w-full"><img alt="Thumbnail" loading="lazy" width="1280" height="720" decoding="async"
-                      data-nimg="1" class="rounded-lg" style="color:transparent"
-                      srcSet="_next/slider-trader-23423.jpeg 1x, _next/slider-trader-23423.jpeg 2x"
-                      src="_next/slider-trader-23423.jpeg" /></div><button type="button"
+                      data-nimg="1" class="rounded-lg"
+                      src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmeet-trader-2.jpg&amp;w=3840&amp;q=75"
+                      style="color: transparent;"></div><button type="button"
                     class="absolute left-0 top-0 flex h-full w-full flex-col justify-end rounded-lg text-white md:pb-[22px] md:pl-[16px] lg:pb-[14px] lg:pl-[38px]"
-                    style="background-image:linear-gradient(180deg, rgb(255 0 0 / 0%) 57%, #000000 100%)">
+                    style="background-image: linear-gradient(rgba(255, 0, 0, 0) 57%, rgb(0, 0, 0) 100%);">
                     <div class="flex h-full w-full cursor-pointer items-center justify-center md:hidden"><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
-                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]" style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" /></div>
+                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]"
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
+                    </div>
                     <div class=" hidden cursor-pointer items-center md:flex lg:pt-[6px]">
                       <p class="text-[15px] font-medium text-white underline">Watch the video</p><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
                         decoding="async" data-nimg="1"
                         class="ml-[9px] h-[22px] w-[22px] lg:h-[28px] lg:w-[28px] 2xl:h-[38px]  2xl:w-[38px]"
-                        style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" />
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
                     </div>
                   </button>
                 </div>
               </div>
-              <div class="swiper-slide mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0">
+              <div class="swiper-slide mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0" data-swiper-slide-index="2"
+                style="width: 545.625px; margin-right: 10px;">
                 <div class="">
                   <div class="w-full"><img alt="Thumbnail" loading="lazy" width="1280" height="720" decoding="async"
-                      data-nimg="1" class="rounded-lg" style="color:transparent"
-                      srcSet="_next/slider-trader-2342333.jpeg 1x, _next/slider-trader-2342333.jpeg 2x"
-                      src="_next/slider-trader-2342333.jpeg" /></div><button type="button"
+                      data-nimg="1" class="rounded-lg"
+                      src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmeet-trader-3.jpg&amp;w=3840&amp;q=75"
+                      style="color: transparent;"></div><button type="button"
                     class="absolute left-0 top-0 flex h-full w-full flex-col justify-end rounded-lg text-white md:pb-[22px] md:pl-[16px] lg:pb-[14px] lg:pl-[38px]"
-                    style="background-image:linear-gradient(180deg, rgb(255 0 0 / 0%) 57%, #000000 100%)">
+                    style="background-image: linear-gradient(rgba(255, 0, 0, 0) 57%, rgb(0, 0, 0) 100%);">
                     <div class="flex h-full w-full cursor-pointer items-center justify-center md:hidden"><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
-                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]" style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" /></div>
+                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]"
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
+                    </div>
                     <div class=" hidden cursor-pointer items-center md:flex lg:pt-[6px]">
                       <p class="text-[15px] font-medium text-white underline">Watch the video</p><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
                         decoding="async" data-nimg="1"
                         class="ml-[9px] h-[22px] w-[22px] lg:h-[28px] lg:w-[28px] 2xl:h-[38px]  2xl:w-[38px]"
-                        style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" />
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
                     </div>
                   </button>
                 </div>
               </div>
-              <div class="swiper-slide mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0">
+              <div class="swiper-slide mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0" data-swiper-slide-index="3"
+                style="width: 545.625px; margin-right: 10px;">
                 <div class="">
                   <div class="w-full"><img alt="Thumbnail" loading="lazy" width="1280" height="720" decoding="async"
-                      data-nimg="1" class="rounded-lg" style="color:transparent"
-                      srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault.jpg&amp;w=1920&amp;q=75 1x, https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault.jpg&amp;w=3840&amp;q=75 2x"
-                      src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault.jpg&amp;w=3840&amp;q=75" />
-                  </div><button type="button"
+                      data-nimg="1" class="rounded-lg"
+                      src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmeet-trader-4.jpg&amp;w=3840&amp;q=75"
+                      style="color: transparent;"></div><button type="button"
                     class="absolute left-0 top-0 flex h-full w-full flex-col justify-end rounded-lg text-white md:pb-[22px] md:pl-[16px] lg:pb-[14px] lg:pl-[38px]"
-                    style="background-image:linear-gradient(180deg, rgb(255 0 0 / 0%) 57%, #000000 100%)">
+                    style="background-image: linear-gradient(rgba(255, 0, 0, 0) 57%, rgb(0, 0, 0) 100%);">
                     <div class="flex h-full w-full cursor-pointer items-center justify-center md:hidden"><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
-                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]" style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" /></div>
+                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]"
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
+                    </div>
                     <div class=" hidden cursor-pointer items-center md:flex lg:pt-[6px]">
                       <p class="text-[15px] font-medium text-white underline">Watch the video</p><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
                         decoding="async" data-nimg="1"
                         class="ml-[9px] h-[22px] w-[22px] lg:h-[28px] lg:w-[28px] 2xl:h-[38px]  2xl:w-[38px]"
-                        style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" />
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
                     </div>
                   </button>
                 </div>
               </div>
-              <div class="swiper-slide mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0">
+              <div class="swiper-slide mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0" data-swiper-slide-index="4"
+                style="width: 545.625px; margin-right: 10px;">
                 <div class="">
                   <div class="w-full"><img alt="Thumbnail" loading="lazy" width="1280" height="720" decoding="async"
-                      data-nimg="1" class="rounded-lg" style="color:transparent"
-                      srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_1.jpg&amp;w=1920&amp;q=75 1x, https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_1.jpg&amp;w=3840&amp;q=75 2x"
-                      src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_1.jpg&amp;w=3840&amp;q=75" />
-                  </div><button type="button"
+                      data-nimg="1" class="rounded-lg"
+                      src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmeet-trader-5.jpg&amp;w=3840&amp;q=75"
+                      style="color: transparent;"></div><button type="button"
                     class="absolute left-0 top-0 flex h-full w-full flex-col justify-end rounded-lg text-white md:pb-[22px] md:pl-[16px] lg:pb-[14px] lg:pl-[38px]"
-                    style="background-image:linear-gradient(180deg, rgb(255 0 0 / 0%) 57%, #000000 100%)">
+                    style="background-image: linear-gradient(rgba(255, 0, 0, 0) 57%, rgb(0, 0, 0) 100%);">
                     <div class="flex h-full w-full cursor-pointer items-center justify-center md:hidden"><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
-                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]" style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" /></div>
+                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]"
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
+                    </div>
                     <div class=" hidden cursor-pointer items-center md:flex lg:pt-[6px]">
                       <p class="text-[15px] font-medium text-white underline">Watch the video</p><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
                         decoding="async" data-nimg="1"
                         class="ml-[9px] h-[22px] w-[22px] lg:h-[28px] lg:w-[28px] 2xl:h-[38px]  2xl:w-[38px]"
-                        style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" />
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
                     </div>
                   </button>
                 </div>
               </div>
-              <div class="swiper-slide mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0">
+              <div class="swiper-slide swiper-slide-prev mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0"
+                data-swiper-slide-index="5" style="width: 545.625px; margin-right: 10px;">
                 <div class="">
                   <div class="w-full"><img alt="Thumbnail" loading="lazy" width="1280" height="720" decoding="async"
-                      data-nimg="1" class="rounded-lg" style="color:transparent"
-                      srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_2.jpg&amp;w=1920&amp;q=75 1x, https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_2.jpg&amp;w=3840&amp;q=75 2x"
-                      src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_2.jpg&amp;w=3840&amp;q=75" />
-                  </div><button type="button"
+                      data-nimg="1" class="rounded-lg"
+                      src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2FFundedNext_Meet_The_Trader_-_Austin_Fig.jpg&amp;w=3840&amp;q=75"
+                      style="color: transparent;"></div><button type="button"
                     class="absolute left-0 top-0 flex h-full w-full flex-col justify-end rounded-lg text-white md:pb-[22px] md:pl-[16px] lg:pb-[14px] lg:pl-[38px]"
-                    style="background-image:linear-gradient(180deg, rgb(255 0 0 / 0%) 57%, #000000 100%)">
+                    style="background-image: linear-gradient(rgba(255, 0, 0, 0) 57%, rgb(0, 0, 0) 100%);">
                     <div class="flex h-full w-full cursor-pointer items-center justify-center md:hidden"><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
-                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]" style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" /></div>
+                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]"
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
+                    </div>
                     <div class=" hidden cursor-pointer items-center md:flex lg:pt-[6px]">
                       <p class="text-[15px] font-medium text-white underline">Watch the video</p><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
                         decoding="async" data-nimg="1"
                         class="ml-[9px] h-[22px] w-[22px] lg:h-[28px] lg:w-[28px] 2xl:h-[38px]  2xl:w-[38px]"
-                        style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" />
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
                     </div>
                   </button>
                 </div>
               </div>
-              <div class="swiper-slide mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0">
+              <div class="swiper-slide swiper-slide-active mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0"
+                data-swiper-slide-index="6" style="width: 545.625px; margin-right: 10px;">
                 <div class="">
                   <div class="w-full"><img alt="Thumbnail" loading="lazy" width="1280" height="720" decoding="async"
-                      data-nimg="1" class="rounded-lg" style="color:transparent"
-                      srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_3.jpg&amp;w=1920&amp;q=75 1x, https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_3.jpg&amp;w=3840&amp;q=75 2x"
-                      src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_3.jpg&amp;w=3840&amp;q=75" />
-                  </div><button type="button"
+                      data-nimg="1" class="rounded-lg"
+                      src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2FThumbnail_copy.jpg&amp;w=3840&amp;q=75"
+                      style="color: transparent;"></div><button type="button"
                     class="absolute left-0 top-0 flex h-full w-full flex-col justify-end rounded-lg text-white md:pb-[22px] md:pl-[16px] lg:pb-[14px] lg:pl-[38px]"
-                    style="background-image:linear-gradient(180deg, rgb(255 0 0 / 0%) 57%, #000000 100%)">
+                    style="background-image: linear-gradient(rgba(255, 0, 0, 0) 57%, rgb(0, 0, 0) 100%);">
                     <div class="flex h-full w-full cursor-pointer items-center justify-center md:hidden"><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
-                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]" style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" /></div>
+                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]"
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
+                    </div>
                     <div class=" hidden cursor-pointer items-center md:flex lg:pt-[6px]">
                       <p class="text-[15px] font-medium text-white underline">Watch the video</p><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
                         decoding="async" data-nimg="1"
                         class="ml-[9px] h-[22px] w-[22px] lg:h-[28px] lg:w-[28px] 2xl:h-[38px]  2xl:w-[38px]"
-                        style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" />
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
                     </div>
                   </button>
                 </div>
               </div>
-              <div class="swiper-slide mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0">
+              <div class="swiper-slide swiper-slide-next mb-[50px] ml-[2px] lg:mb-[60px] lg:ml-0"
+                data-swiper-slide-index="7" style="width: 545.625px; margin-right: 10px;">
                 <div class="">
                   <div class="w-full"><img alt="Thumbnail" loading="lazy" width="1280" height="720" decoding="async"
-                      data-nimg="1" class="rounded-lg" style="color:transparent"
-                      srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_4.jpg&amp;w=1920&amp;q=75 1x, https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_4.jpg&amp;w=3840&amp;q=75 2x"
-                      src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_4.jpg&amp;w=3840&amp;q=75" />
-                  </div><button type="button"
+                      data-nimg="1" class="rounded-lg"
+                      src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2FThumbnail_copy%2520(1).jpg&amp;w=3840&amp;q=75"
+                      style="color: transparent;"></div><button type="button"
                     class="absolute left-0 top-0 flex h-full w-full flex-col justify-end rounded-lg text-white md:pb-[22px] md:pl-[16px] lg:pb-[14px] lg:pl-[38px]"
-                    style="background-image:linear-gradient(180deg, rgb(255 0 0 / 0%) 57%, #000000 100%)">
+                    style="background-image: linear-gradient(rgba(255, 0, 0, 0) 57%, rgb(0, 0, 0) 100%);">
                     <div class="flex h-full w-full cursor-pointer items-center justify-center md:hidden"><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
-                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]" style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" /></div>
+                        decoding="async" data-nimg="1" class="h-[40px] w-[40px]"
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
+                    </div>
                     <div class=" hidden cursor-pointer items-center md:flex lg:pt-[6px]">
                       <p class="text-[15px] font-medium text-white underline">Watch the video</p><img
                         alt="Icon of a play button, representing the start" loading="lazy" width="22" height="23"
                         decoding="async" data-nimg="1"
                         class="ml-[9px] h-[22px] w-[22px] lg:h-[28px] lg:w-[28px] 2xl:h-[38px]  2xl:w-[38px]"
-                        style="color:transparent"
-                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg" />
+                        src="https://dirslur24ie1a.cloudfront.net/fundednext/play-iconn.svg"
+                        style="color: transparent;">
                     </div>
                   </button>
                 </div>
               </div>
             </div>
-            <div class="swiper-pagination"></div>
+            <div
+              class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
+              <span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span
+                class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span
+                class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span
+                class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span
+                class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span
+                class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span
+                class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span
+                class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span
+                class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span>
+            </div>
           </div>
         </div>
       </section>
@@ -1550,8 +1685,8 @@
         <div class="container">
           <div class="flex justify-center">
             <div class="md:w-10/12 lg:w-8/12 xl:w-6/12 relative">
-              <div class="absolute right-full top-0 -translate-y-1/2 hidden md:block"><svg width="78" height="79"
-                  fill="none" xmlns="http://www.w3.org/2000/svg">
+              <div class="absolute right-full top-0 -translate-y-1/2 hidden md:block">
+                <svg width="78" height="79" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#prefix__clip0_17_724)">
                     <path
                       d="M1.63 33.268c4.144-14.873 14.363-25.67 24.298-25.67.797 0 1.595.069 2.371.207a1.583 1.583 0 011.248 1.986l-2.045 7.344a1.596 1.596 0 01-1.586 1.156l-.163-.003c-3.684 0-10.417 5.543-13.85 17.863-.165.597.461 1.105 1.039.881 3.53-1.369 7.526-1.587 11.185-.564 9.39 2.638 14.892 12.452 12.267 21.877-2.128 7.638-9.126 12.974-17.019 12.974-1.607 0-3.213-.223-4.771-.661-6.193-1.738-10.849-6.9-13.11-14.53-2.042-6.885-1.991-15.217.137-22.86z"
@@ -1575,228 +1710,312 @@
                       <path fill="#fff" transform="matrix(-1 0 0 1 78 .303)" d="M0 0h78v78.307H0z"></path>
                     </clipPath>
                   </defs>
-                </svg></div>
-              <h2 class="text-[#2D3139] font-bold text-xl md:leading-[52px] md:text-[38px] text-center">Check Out the
-                Testimonial Our Traders Are Saying</h2>
+                </svg>
+              </div>
+              <h2 class="text-[#2D3139] font-bold text-xl md:leading-[52px] md:text-[38px] text-center">
+                Check Out the Testimonial Our Traders Are Saying
+              </h2>
             </div>
           </div>
         </div>
         <div class="mt-[40px] md:mt-[70px]">
           <div class="relative flex w-full flex-wrap">
-            <div class="swiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide md:!w-6/12 lg:!w-[33.33%] xl:!w-[25%]">
-                  <div class="bg-white px-[25px] py-[40px] mb-[50px]  rounded-[6px]">
-                    <div class="text-sm text-[#444444] leading-6">It is a great company, honest and every day it grows
-                      and improves for its customers. Just follow the rules, and be consistent, no more. Greetings from
-                      Colombia</div>
-                    <div class="flex items-center mt-[34px] ">
-                      <div class="w-[43px] h-[43px]"><img alt="twitter" loading="lazy" width="43" height="43"
-                          decoding="async" data-nimg="1" class="w-full" style="color:transparent"
-                          srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Ftwitter-icon.png&amp;w=48&amp;q=75 1x, https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Ftwitter-icon.png&amp;w=96&amp;q=75 2x"
-                          src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Ftwitter-icon.png&amp;w=96&amp;q=75" />
+            <div
+              class="swiper swiper-initialized swiper-horizontal swiper-watch-progress swiper-backface-hidden testimonial-swiper">
+              <div class="swiper-wrapper"
+                style="cursor: grab; transform: translate3d(-1878px, 0px, 0px); transition-duration: 0ms; transition-delay: 0ms;">
+                <div class="swiper-slide odd:pt-[50px] md:!w-6/12 lg:!w-[33.33%] xl:!w-[25%]"
+                  data-swiper-slide-index="4" style="margin-right: 30px;">
+                  <div class="">
+                    <div class="bg-white px-[25px] py-[40px] mb-[50px]  rounded-[6px]">
+                      <div class="text-sm text-[#444444] leading-6">
+                        Keep it up..Keep on moving forward , keep on moving up..fly high
+                        <span class="text-blue-500">#fundednext</span> michael angelo
                       </div>
-                      <div class="w-[calc(100%-43px)] pl-5"><span
-                          class="text-xl font-semibold text-[#2D3139] block">JORGE LUIS MEJIA ARENAS</span><span
-                          class="block text-sm text-[#606060]">Successful Trader</span></div>
+                      <div class="flex items-center mt-[34px] ">
+                        <div class="w-[43px] h-[43px]">
+                          <img alt="twitter" loading="lazy" width="43" height="43" decoding="async" data-nimg="1"
+                            class="w-full"
+                            src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Ftwitter-icon.png&amp;w=96&amp;q=75"
+                            style="color: transparent;">
+                        </div>
+                        <div class="w-[calc(100%-43px)] pl-5">
+                          <span class="text-xl font-semibold text-[#2D3139] block">Pumpkin</span>
+                          <span class="block text-sm text-[#606060]">Successful Trader</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="bg-white px-[25px] py-[40px] mb-[50px]  rounded-[6px]">
+                      <div class="text-sm text-[#444444] leading-6">
+                        always receive the necessary assistance for the current
+                        problem at hand. What I particularly appreciate is the express model, which alleviates the
+                        unnecessary
+                        stress of achieving profit targets. Among the numerous firms available, I highly recommend
+                        fundednext.
+                        While the evaluation model no longer imposes restrictions on news trading, it would be wonderful
+                        to
+                        see the same policy applied to the express account.
+                      </div>
+                      <div class="flex items-center mt-[34px] ">
+                        <div class="w-[43px] h-[43px]">
+                          <img alt="trustpilot" loading="lazy" width="43" height="43" decoding="async" data-nimg="1"
+                            class="w-full"
+                            src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Ftrust-pilot-icon.png&amp;w=96&amp;q=75"
+                            style="color: transparent;">
+                        </div>
+                        <div class="w-[calc(100%-43px)] pl-5">
+                          <span class="text-xl font-semibold text-[#2D3139] block">Ratz B</span>
+                          <span class="block text-sm text-[#606060]">Successful Trader</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="swiper-slide md:!w-6/12 lg:!w-[33.33%] xl:!w-[25%]">
-                  <div class="bg-white px-[25px] py-[40px] mb-[50px]  rounded-[6px]">
-                    <div class="text-sm text-[#444444] leading-6">Even though FundedNext is fairly new to the scene,
-                      they are doing things differently and better. Competitive trading rules, scalable account sizes
-                      and profit sharing, a trading model that fits any trader’s style, fast rewards and proof and the
-                      best client support I’ve experienced - you receive a dedicated account manager from the very
-                      beginning of your trading journey with Funded Next. I highly recommend this firm.</div>
-                    <div class="flex items-center mt-[34px] ">
-                      <div class="w-[43px] h-[43px]"><img alt="trustpilot" loading="lazy" width="43" height="43"
-                          decoding="async" data-nimg="1" class="w-full" style="color:transparent"
-                          srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Ftrust-pilot-icon.png&amp;w=48&amp;q=75 1x, https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Ftrust-pilot-icon.png&amp;w=96&amp;q=75 2x"
-                          src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Ftrust-pilot-icon.png&amp;w=96&amp;q=75" />
+                <div class="swiper-slide odd:pt-[50px] md:!w-6/12 lg:!w-[33.33%] xl:!w-[25%]"
+                  data-swiper-slide-index="5" style="margin-right: 30px;">
+                  <div class="">
+                    <div class="bg-white px-[25px] py-[40px] mb-[50px]  rounded-[6px]">
+                      <div class="text-sm text-[#444444] leading-6">
+                        For me, it is the first time to use it! But the all
+                        experiences are worth ! The platform is the best! And the agent always online very easily to get
+                        connected! And my manager always contacted to solve my concerns! I will come back to review
+                        after my
+                        first reward!
                       </div>
-                      <div class="w-[calc(100%-43px)] pl-5"><span
-                          class="text-xl font-semibold text-[#2D3139] block">Maria Henderson</span><span
-                          class="block text-sm text-[#606060]">Successful Trader</span></div>
+                      <div class="flex items-center mt-[34px] ">
+                        <div class="w-[43px] h-[43px]">
+                          <img alt="trustpilot" loading="lazy" width="43" height="43" decoding="async" data-nimg="1"
+                            class="w-full"
+                            src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Ftrust-pilot-icon.png&amp;w=96&amp;q=75"
+                            style="color: transparent;">
+                        </div>
+                        <div class="w-[calc(100%-43px)] pl-5">
+                          <span class="text-xl font-semibold text-[#2D3139] block">Benke Xu</span>
+                          <span class="block text-sm text-[#606060]">Successful Trader</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="bg-white px-[25px] py-[40px] mb-[50px]  rounded-[6px]">
+                      <div class="text-sm text-[#444444] leading-6">
+                        Amazing customer support and super friendly,
+                        recently won
+                        a challenge account and needed some help on a few things and had 10+ star support!Thanks for all
+                        the
+                        amazing support and special thanks to Fredy Martinez for speedy help and well explained
+                        information.
+                      </div>
+                      <div class="flex items-center mt-[34px] ">
+                        <div class="w-[43px] h-[43px]">
+                          <img alt="INSTAGRAM" loading="lazy" width="43" height="43" decoding="async" data-nimg="1"
+                            class="w-full"
+                            src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Finstragram-icon.png&amp;w=96&amp;q=75"
+                            style="color: transparent;">
+                        </div>
+                        <div class="w-[calc(100%-43px)] pl-5">
+                          <span class="text-xl font-semibold text-[#2D3139] block">Adrian Burt</span>
+                          <span class="block text-sm text-[#606060]">Successful Trader</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="swiper-slide md:!w-6/12 lg:!w-[33.33%] xl:!w-[25%]">
-                  <div class="bg-white px-[25px] py-[40px] mb-[50px]  rounded-[6px]">
-                    <div class="text-sm text-[#444444] leading-6">I have been working with FundedNext for 3-4 months
-                      already, and even got interviewed by them. The company fills up to what they say, quick rewards,
-                      different reward methods, fast platforms and overall they are improving because they listen to the
-                      user. I highly recommend them, they are professionals</div>
-                    <div class="flex items-center mt-[34px] ">
-                      <div class="w-[43px] h-[43px]"><img alt="YOUTUBE" loading="lazy" width="43" height="43"
-                          decoding="async" data-nimg="1" class="w-full" style="color:transparent"
-                          srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fyoutube-icon.png&amp;w=48&amp;q=75 1x, https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fyoutube-icon.png&amp;w=96&amp;q=75 2x"
-                          src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fyoutube-icon.png&amp;w=96&amp;q=75" />
+                <div class="swiper-slide odd:pt-[50px] md:!w-6/12 lg:!w-[33.33%] xl:!w-[25%]"
+                  data-swiper-slide-index="0" style="margin-right: 30px;">
+                  <div class="">
+                    <div class="bg-white px-[25px] py-[40px] mb-[50px]  rounded-[6px]">
+                      <div class="text-sm text-[#444444] leading-6">
+                        It is a great company, honest and every day it grows and
+                        improves for its customers. Just follow the rules, and be consistent, no more. Greetings from
+                        Colombia
                       </div>
-                      <div class="w-[calc(100%-43px)] pl-5"><span
-                          class="text-xl font-semibold text-[#2D3139] block">Emiliano Mesa</span><span
-                          class="block text-sm text-[#606060]">Successful Trader</span></div>
+                      <div class="flex items-center mt-[34px] ">
+                        <div class="w-[43px] h-[43px]">
+                          <img alt="twitter" loading="lazy" width="43" height="43" decoding="async" data-nimg="1"
+                            class="w-full"
+                            src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Ftwitter-icon.png&amp;w=96&amp;q=75"
+                            style="color: transparent;">
+                        </div>
+                        <div class="w-[calc(100%-43px)] pl-5">
+                          <span class="text-xl font-semibold text-[#2D3139] block">JORGE LUIS MEJIA ARENAS</span>
+                          <span class="block text-sm text-[#606060]">Successful Trader</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="bg-white px-[25px] py-[40px] mb-[50px]  rounded-[6px]">
+                      <div class="text-sm text-[#444444] leading-6">
+                        Even though FundedNext is fairly new to the scene,
+                        they
+                        are doing things differently and better. Competitive trading rules, scalable account sizes and
+                        profit
+                        sharing, a trading model that fits any trader’s style, fast rewards and proof and the best
+                        client
+                        support I’ve experienced - you receive a dedicated account manager from the very beginning of
+                        your
+                        trading journey with Funded Next. I highly recommend this firm.
+                      </div>
+                      <div class="flex items-center mt-[34px] ">
+                        <div class="w-[43px] h-[43px]">
+                          <img alt="trustpilot" loading="lazy" width="43" height="43" decoding="async" data-nimg="1"
+                            class="w-full"
+                            src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Ftrust-pilot-icon.png&amp;w=96&amp;q=75"
+                            style="color: transparent;">
+                        </div>
+                        <div class="w-[calc(100%-43px)] pl-5">
+                          <span class="text-xl font-semibold text-[#2D3139] block">Maria Henderson</span>
+                          <span class="block text-sm text-[#606060]">Successful Trader</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="swiper-slide md:!w-6/12 lg:!w-[33.33%] xl:!w-[25%]">
-                  <div class="bg-white px-[25px] py-[40px] mb-[50px]  rounded-[6px]">
-                    <div class="text-sm text-[#444444] leading-6">Always keep shinning and becoming number 1 firm</div>
-                    <div class="flex items-center mt-[34px] ">
-                      <div class="w-[43px] h-[43px]"><img alt="INSTAGRAM" loading="lazy" width="43" height="43"
-                          decoding="async" data-nimg="1" class="w-full" style="color:transparent"
-                          srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Finstragram-icon.png&amp;w=48&amp;q=75 1x, https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Finstragram-icon.png&amp;w=96&amp;q=75 2x"
-                          src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Finstragram-icon.png&amp;w=96&amp;q=75" />
+                <div class="swiper-slide swiper-slide-prev odd:pt-[50px] md:!w-6/12 lg:!w-[33.33%] xl:!w-[25%]"
+                  data-swiper-slide-index="1" style="margin-right: 30px;">
+                  <div class="">
+                    <div class="bg-white px-[25px] py-[40px] mb-[50px]  rounded-[6px]">
+                      <div class="text-sm text-[#444444] leading-6">
+                        I have been working with FundedNext for 3-4 months
+                        already, and even got interviewed by them. The company fills up to what they say, quick rewards,
+                        different reward methods, fast platforms and overall they are improving because they listen to
+                        the
+                        user. I highly recommend them, they are professionals
                       </div>
-                      <div class="w-[calc(100%-43px)] pl-5"><span
-                          class="text-xl font-semibold text-[#2D3139] block">Asad Ijaz</span><span
-                          class="block text-sm text-[#606060]">Successful Trader</span></div>
+                      <div class="flex items-center mt-[34px] ">
+                        <div class="w-[43px] h-[43px]">
+                          <img alt="YOUTUBE" loading="lazy" width="43" height="43" decoding="async" data-nimg="1"
+                            class="w-full"
+                            src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fyoutube-icon.png&amp;w=96&amp;q=75"
+                            style="color: transparent;">
+                        </div>
+                        <div class="w-[calc(100%-43px)] pl-5">
+                          <span class="text-xl font-semibold text-[#2D3139] block">Emiliano Mesa</span>
+                          <span class="block text-sm text-[#606060]">Successful Trader</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="bg-white px-[25px] py-[40px] mb-[50px]  rounded-[6px]">
+                      <div class="text-sm text-[#444444] leading-6">
+                        Always keep shinning and becoming number 1 firm
+                      </div>
+                      <div class="flex items-center mt-[34px] ">
+                        <div class="w-[43px] h-[43px]">
+                          <img alt="INSTAGRAM" loading="lazy" width="43" height="43" decoding="async" data-nimg="1"
+                            class="w-full"
+                            src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Finstragram-icon.png&amp;w=96&amp;q=75"
+                            style="color: transparent;">
+                        </div>
+                        <div class="w-[calc(100%-43px)] pl-5">
+                          <span class="text-xl font-semibold text-[#2D3139] block">Asad Ijaz</span>
+                          <span class="block text-sm text-[#606060]">Successful Trader</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="swiper-slide md:!w-6/12 lg:!w-[33.33%] xl:!w-[25%]">
-                  <div class="bg-white px-[25px] py-[40px] mb-[50px]  rounded-[6px]">
-                    <div class="text-sm text-[#444444] leading-6">I get a certificate of elite trader. Today I get an
-                      email from funded next and I surprised, after I pass 5 accounts I get an elite trader certificate
-                      from fundednext company, I love funded next and I want to say it's the best finance company that I
-                      have ever been seen.</div>
-                    <div class="flex items-center mt-[34px] ">
-                      <div class="w-[43px] h-[43px]"><img alt="YOUTUBE" loading="lazy" width="43" height="43"
-                          decoding="async" data-nimg="1" class="w-full" style="color:transparent"
-                          srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fyoutube-icon.png&amp;w=48&amp;q=75 1x, https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fyoutube-icon.png&amp;w=96&amp;q=75 2x"
-                          src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fyoutube-icon.png&amp;w=96&amp;q=75" />
+                <div
+                  class="swiper-slide swiper-slide-visible swiper-slide-fully-visible swiper-slide-active odd:pt-[50px] md:!w-6/12 lg:!w-[33.33%] xl:!w-[25%]"
+                  data-swiper-slide-index="2" style="margin-right: 30px;">
+                  <div class="">
+                    <div class="bg-white px-[25px] py-[40px] mb-[50px]  rounded-[6px]">
+                      <div class="text-sm text-[#444444] leading-6">
+                        I get a certificate of elite trader. Today I get an
+                        email
+                        from funded next and I surprised, after I pass 5 accounts I get an elite trader certificate from
+                        fundednext company, I love funded next and I want to say it's the best finance company that I
+                        have
+                        ever been seen.
                       </div>
-                      <div class="w-[calc(100%-43px)] pl-5"><span
-                          class="text-xl font-semibold text-[#2D3139] block">Danial Mirlou</span><span
-                          class="block text-sm text-[#606060]">Successful Trader</span></div>
+                      <div class="flex items-center mt-[34px] ">
+                        <div class="w-[43px] h-[43px]">
+                          <img alt="YOUTUBE" loading="lazy" width="43" height="43" decoding="async" data-nimg="1"
+                            class="w-full"
+                            src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fyoutube-icon.png&amp;w=96&amp;q=75"
+                            style="color: transparent;">
+                        </div>
+                        <div class="w-[calc(100%-43px)] pl-5">
+                          <span class="text-xl font-semibold text-[#2D3139] block">Danial Mirlou</span>
+                          <span class="block text-sm text-[#606060]">Successful Trader</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="bg-white px-[25px] py-[40px] mb-[50px]  rounded-[6px]">
+                      <div class="text-sm text-[#444444] leading-6">
+                        Hi guys. I Just wanna say that, so far, so amazingly
+                        good....Great costumer service...They answered all my questions with high level of
+                        professionalism,
+                        and I´m really glad that i found a great porper trading company to work with...Congrats
+                        FundedNext for
+                        the amazing job....
+                      </div>
+                      <div class="flex items-center mt-[34px] ">
+                        <div class="w-[43px] h-[43px]">
+                          <img alt="INSTAGRAM" loading="lazy" width="43" height="43" decoding="async" data-nimg="1"
+                            class="w-full"
+                            src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Finstragram-icon.png&amp;w=96&amp;q=75"
+                            style="color: transparent;">
+                        </div>
+                        <div class="w-[calc(100%-43px)] pl-5">
+                          <span class="text-xl font-semibold text-[#2D3139] block">Marco Capurso</span>
+                          <span class="block text-sm text-[#606060]">Successful Trader</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="swiper-slide md:!w-6/12 lg:!w-[33.33%] xl:!w-[25%]">
-                  <div class="bg-white px-[25px] py-[40px] mb-[50px]  rounded-[6px]">
-                    <div class="text-sm text-[#444444] leading-6">Hi guys. I Just wanna say that, so far, so amazingly
-                      good....Great costumer service...They answered all my questions with high level of
-                      professionalism, and I´m really glad that i found a great porper trading company to work
-                      with...Congrats FundedNext for the amazing job....</div>
-                    <div class="flex items-center mt-[34px] ">
-                      <div class="w-[43px] h-[43px]"><img alt="INSTAGRAM" loading="lazy" width="43" height="43"
-                          decoding="async" data-nimg="1" class="w-full" style="color:transparent"
-                          srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Finstragram-icon.png&amp;w=48&amp;q=75 1x, https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Finstragram-icon.png&amp;w=96&amp;q=75 2x"
-                          src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Finstragram-icon.png&amp;w=96&amp;q=75" />
+                <div
+                  class="swiper-slide swiper-slide-visible swiper-slide-next odd:pt-[50px] md:!w-6/12 lg:!w-[33.33%] xl:!w-[25%]"
+                  data-swiper-slide-index="3" style="margin-right: 30px;">
+                  <div class="">
+                    <div class="bg-white px-[25px] py-[40px] mb-[50px]  rounded-[6px]">
+                      <div class="text-sm text-[#444444] leading-6">
+                        Thanks for this outstanding opportunity again...
+                        done with
+                        the needful
                       </div>
-                      <div class="w-[calc(100%-43px)] pl-5"><span
-                          class="text-xl font-semibold text-[#2D3139] block">Marco Capurso</span><span
-                          class="block text-sm text-[#606060]">Successful Trader</span></div>
+                      <div class="flex items-center mt-[34px] ">
+                        <div class="w-[43px] h-[43px]">
+                          <img alt="twitter" loading="lazy" width="43" height="43" decoding="async" data-nimg="1"
+                            class="w-full"
+                            src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Ftwitter-icon.png&amp;w=96&amp;q=75"
+                            style="color: transparent;">
+                        </div>
+                        <div class="w-[calc(100%-43px)] pl-5">
+                          <span class="text-xl font-semibold text-[#2D3139] block">Talha Nisar</span>
+                          <span class="block text-sm text-[#606060]">Successful Trader</span>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <div class="swiper-slide md:!w-6/12 lg:!w-[33.33%] xl:!w-[25%]">
-                  <div class="bg-white px-[25px] py-[40px] mb-[50px]  rounded-[6px]">
-                    <div class="text-sm text-[#444444] leading-6">Thanks for this outstanding opportunity again... done
-                      with the needful</div>
-                    <div class="flex items-center mt-[34px] ">
-                      <div class="w-[43px] h-[43px]"><img alt="twitter" loading="lazy" width="43" height="43"
-                          decoding="async" data-nimg="1" class="w-full" style="color:transparent"
-                          srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Ftwitter-icon.png&amp;w=48&amp;q=75 1x, https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Ftwitter-icon.png&amp;w=96&amp;q=75 2x"
-                          src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Ftwitter-icon.png&amp;w=96&amp;q=75" />
+                    <div class="bg-white px-[25px] py-[40px] mb-[50px]  rounded-[6px]">
+                      <div class="text-sm text-[#444444] leading-6">
+                        Always get the needed support to the issue in hand.
+                        What I
+                        love the most is the express model as it removes unnecessary pressure on meeting profit targets.
+                        With
+                        so many firms out there will definately recommend fundednext. Although news trading rule has
+                        been.
+                        Removed on the evaluation model, will be great to see the same for the express account.
                       </div>
-                      <div class="w-[calc(100%-43px)] pl-5"><span
-                          class="text-xl font-semibold text-[#2D3139] block">Talha Nisar</span><span
-                          class="block text-sm text-[#606060]">Successful Trader</span></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide md:!w-6/12 lg:!w-[33.33%] xl:!w-[25%]">
-                  <div class="bg-white px-[25px] py-[40px] mb-[50px]  rounded-[6px]">
-                    <div class="text-sm text-[#444444] leading-6">Always get the needed support to the issue in hand.
-                      What I love the most is the express model as it removes unnecessary pressure on meeting profit
-                      targets. With so many firms out there will definately recommend fundednext. Although news trading
-                      rule has been. Removed on the evaluation model, will be great to see the same for the express
-                      account.</div>
-                    <div class="flex items-center mt-[34px] ">
-                      <div class="w-[43px] h-[43px]"><img alt="trustpilot" loading="lazy" width="43" height="43"
-                          decoding="async" data-nimg="1" class="w-full" style="color:transparent"
-                          srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Ftrust-pilot-icon.png&amp;w=48&amp;q=75 1x, https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Ftrust-pilot-icon.png&amp;w=96&amp;q=75 2x"
-                          src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Ftrust-pilot-icon.png&amp;w=96&amp;q=75" />
+                      <div class="flex items-center mt-[34px] ">
+                        <div class="w-[43px] h-[43px]">
+                          <img alt="trustpilot" loading="lazy" width="43" height="43" decoding="async" data-nimg="1"
+                            class="w-full"
+                            src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Ftrust-pilot-icon.png&amp;w=96&amp;q=75"
+                            style="color: transparent;">
+                        </div>
+                        <div class="w-[calc(100%-43px)] pl-5">
+                          <span class="text-xl font-semibold text-[#2D3139] block">kaytan Ewulu</span>
+                          <span class="block text-sm text-[#606060]">Successful Trader</span>
+                        </div>
                       </div>
-                      <div class="w-[calc(100%-43px)] pl-5"><span
-                          class="text-xl font-semibold text-[#2D3139] block">kaytan Ewulu</span><span
-                          class="block text-sm text-[#606060]">Successful Trader</span></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide md:!w-6/12 lg:!w-[33.33%] xl:!w-[25%]">
-                  <div class="bg-white px-[25px] py-[40px] mb-[50px]  rounded-[6px]">
-                    <div class="text-sm text-[#444444] leading-6">Keep it up..Keep on moving forward , keep on moving
-                      up..fly high <span class='text-blue-500'>#fundednext</span> michael angelo</div>
-                    <div class="flex items-center mt-[34px] ">
-                      <div class="w-[43px] h-[43px]"><img alt="twitter" loading="lazy" width="43" height="43"
-                          decoding="async" data-nimg="1" class="w-full" style="color:transparent"
-                          srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Ftwitter-icon.png&amp;w=48&amp;q=75 1x, https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Ftwitter-icon.png&amp;w=96&amp;q=75 2x"
-                          src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Ftwitter-icon.png&amp;w=96&amp;q=75" />
-                      </div>
-                      <div class="w-[calc(100%-43px)] pl-5"><span
-                          class="text-xl font-semibold text-[#2D3139] block">Pumpkin</span><span
-                          class="block text-sm text-[#606060]">Successful Trader</span></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide md:!w-6/12 lg:!w-[33.33%] xl:!w-[25%]">
-                  <div class="bg-white px-[25px] py-[40px] mb-[50px]  rounded-[6px]">
-                    <div class="text-sm text-[#444444] leading-6"> always receive the necessary assistance for the
-                      current problem at hand. What I particularly appreciate is the express model, which alleviates the
-                      unnecessary stress of achieving profit targets. Among the numerous firms available, I highly
-                      recommend fundednext. While the evaluation model no longer imposes restrictions on news trading,
-                      it would be wonderful to see the same policy applied to the express account.</div>
-                    <div class="flex items-center mt-[34px] ">
-                      <div class="w-[43px] h-[43px]"><img alt="trustpilot" loading="lazy" width="43" height="43"
-                          decoding="async" data-nimg="1" class="w-full" style="color:transparent"
-                          srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Ftrust-pilot-icon.png&amp;w=48&amp;q=75 1x, https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Ftrust-pilot-icon.png&amp;w=96&amp;q=75 2x"
-                          src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Ftrust-pilot-icon.png&amp;w=96&amp;q=75" />
-                      </div>
-                      <div class="w-[calc(100%-43px)] pl-5"><span
-                          class="text-xl font-semibold text-[#2D3139] block">Ratz B</span><span
-                          class="block text-sm text-[#606060]">Successful Trader</span></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide md:!w-6/12 lg:!w-[33.33%] xl:!w-[25%]">
-                  <div class="bg-white px-[25px] py-[40px] mb-[50px]  rounded-[6px]">
-                    <div class="text-sm text-[#444444] leading-6">For me, it is the first time to use it! But the all
-                      experiences are worth ! The platform is the best! And the agent always online very easily to get
-                      connected! And my manager always contacted to solve my concerns! I will come back to review after
-                      my first reward!</div>
-                    <div class="flex items-center mt-[34px] ">
-                      <div class="w-[43px] h-[43px]"><img alt="trustpilot" loading="lazy" width="43" height="43"
-                          decoding="async" data-nimg="1" class="w-full" style="color:transparent"
-                          srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Ftrust-pilot-icon.png&amp;w=48&amp;q=75 1x, https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Ftrust-pilot-icon.png&amp;w=96&amp;q=75 2x"
-                          src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Ftrust-pilot-icon.png&amp;w=96&amp;q=75" />
-                      </div>
-                      <div class="w-[calc(100%-43px)] pl-5"><span
-                          class="text-xl font-semibold text-[#2D3139] block">Benke Xu</span><span
-                          class="block text-sm text-[#606060]">Successful Trader</span></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide md:!w-6/12 lg:!w-[33.33%] xl:!w-[25%]">
-                  <div class="bg-white px-[25px] py-[40px] mb-[50px]  rounded-[6px]">
-                    <div class="text-sm text-[#444444] leading-6">Amazing customer support and super friendly, recently
-                      won a challenge account and needed some help on a few things and had 10+ star support!Thanks for
-                      all the amazing support and special thanks to Fredy Martinez for speedy help and well explained
-                      information.</div>
-                    <div class="flex items-center mt-[34px] ">
-                      <div class="w-[43px] h-[43px]"><img alt="INSTAGRAM" loading="lazy" width="43" height="43"
-                          decoding="async" data-nimg="1" class="w-full" style="color:transparent"
-                          srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Finstragram-icon.png&amp;w=48&amp;q=75 1x, https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Finstragram-icon.png&amp;w=96&amp;q=75 2x"
-                          src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Finstragram-icon.png&amp;w=96&amp;q=75" />
-                      </div>
-                      <div class="w-[calc(100%-43px)] pl-5"><span
-                          class="text-xl font-semibold text-[#2D3139] block">Adrian Burt</span><span
-                          class="block text-sm text-[#606060]">Successful Trader</span></div>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
+            <div
+              class="absolute left-0 top-0 z-10 h-full w-[20%] bg-[linear-gradient(90deg,#F2F1FF_0%,rgba(255,255,255,0)_100%)]">
+            </div>
+            <div
+              class="absolute right-0 top-0 z-10 h-full w-[20%] bg-[linear-gradient(-90deg,#F2F1FF_0%,rgba(255,255,255,0)_100%)]">
             </div>
           </div>
         </div>
@@ -1863,7 +2082,6 @@
                 <div class="">
                   <div class="w-full"><img alt="Thumbnail" loading="lazy" width="1280" height="720" decoding="async"
                       data-nimg="1" class="rounded-lg" style="color:transparent"
-                      srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_5.jpg&amp;w=1920&amp;q=75 1x, https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_5.jpg&amp;w=3840&amp;q=75 2x"
                       src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_5.jpg&amp;w=3840&amp;q=75" />
                   </div><button type="button"
                     class="absolute left-0 top-0 flex h-full w-full flex-col justify-end rounded-lg text-white md:pb-[22px] md:pl-[16px] lg:pb-[14px] lg:pl-[38px]"
@@ -1887,7 +2105,6 @@
                 <div class="">
                   <div class="w-full"><img alt="Thumbnail" loading="lazy" width="1280" height="720" decoding="async"
                       data-nimg="1" class="rounded-lg" style="color:transparent"
-                      srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_6.jpg&amp;w=1920&amp;q=75 1x, https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_6.jpg&amp;w=3840&amp;q=75 2x"
                       src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_6.jpg&amp;w=3840&amp;q=75" />
                   </div><button type="button"
                     class="absolute left-0 top-0 flex h-full w-full flex-col justify-end rounded-lg text-white md:pb-[22px] md:pl-[16px] lg:pb-[14px] lg:pl-[38px]"
@@ -1911,7 +2128,6 @@
                 <div class="">
                   <div class="w-full"><img alt="Thumbnail" loading="lazy" width="1280" height="720" decoding="async"
                       data-nimg="1" class="rounded-lg" style="color:transparent"
-                      srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_7.jpg&amp;w=1920&amp;q=75 1x, https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_7.jpg&amp;w=3840&amp;q=75 2x"
                       src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_7.jpg&amp;w=3840&amp;q=75" />
                   </div><button type="button"
                     class="absolute left-0 top-0 flex h-full w-full flex-col justify-end rounded-lg text-white md:pb-[22px] md:pl-[16px] lg:pb-[14px] lg:pl-[38px]"
@@ -1935,7 +2151,6 @@
                 <div class="">
                   <div class="w-full"><img alt="Thumbnail" loading="lazy" width="1280" height="720" decoding="async"
                       data-nimg="1" class="rounded-lg" style="color:transparent"
-                      srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_8.jpg&amp;w=1920&amp;q=75 1x, https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_8.jpg&amp;w=3840&amp;q=75 2x"
                       src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_8.jpg&amp;w=3840&amp;q=75" />
                   </div><button type="button"
                     class="absolute left-0 top-0 flex h-full w-full flex-col justify-end rounded-lg text-white md:pb-[22px] md:pl-[16px] lg:pb-[14px] lg:pl-[38px]"
@@ -1959,7 +2174,6 @@
                 <div class="">
                   <div class="w-full"><img alt="Thumbnail" loading="lazy" width="1280" height="720" decoding="async"
                       data-nimg="1" class="rounded-lg" style="color:transparent"
-                      srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_9.jpg&amp;w=1920&amp;q=75 1x, https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_9.jpg&amp;w=3840&amp;q=75 2x"
                       src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_9.jpg&amp;w=3840&amp;q=75" />
                   </div><button type="button"
                     class="absolute left-0 top-0 flex h-full w-full flex-col justify-end rounded-lg text-white md:pb-[22px] md:pl-[16px] lg:pb-[14px] lg:pl-[38px]"
@@ -1983,7 +2197,6 @@
                 <div class="">
                   <div class="w-full"><img alt="Thumbnail" loading="lazy" width="1280" height="720" decoding="async"
                       data-nimg="1" class="rounded-lg" style="color:transparent"
-                      srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_10.jpg&amp;w=1920&amp;q=75 1x, https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_10.jpg&amp;w=3840&amp;q=75 2x"
                       src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmaxresdefault_10.jpg&amp;w=3840&amp;q=75" />
                   </div><button type="button"
                     class="absolute left-0 top-0 flex h-full w-full flex-col justify-end rounded-lg text-white md:pb-[22px] md:pl-[16px] lg:pb-[14px] lg:pl-[38px]"
@@ -2009,440 +2222,464 @@
         </div>
       </section>
       <section class="container-fluid pt-16 lg:pt-10 lg:pb-20"><img
-          alt="Medal icon representing the trader&#x27;s certificate of excellence." loading="lazy" width="66"
-          height="66" decoding="async" data-nimg="1"
-          class="mx-auto h-[50px] w-[50px] lg:h-[57px] lg:w-[57px] 2xl:h-[65px] 2xl:w-[65px]" style="color:transparent"
-          src="https://dirslur24ie1a.cloudfront.net/fundednext/trade-certificate.svg" />
-        <h2 class="text-center text-lg lg:text-[32px] font-bold lg:pt-2">Trader&#x27;s Certificate</h2>
-        <hr class="mb-8 border-[#EAEAEA] mt-3 lg:mt-[34px] 2xl:mt-[38px] lg:mb-[75px] 2xl:mb-[78px]" />
+          alt="Medal icon representing the trader's certificate of excellence." loading="lazy" width="66" height="66"
+          decoding="async" data-nimg="1"
+          class="mx-auto h-[50px] w-[50px] lg:h-[57px] lg:w-[57px] 2xl:h-[65px] 2xl:w-[65px]"
+          src="https://dirslur24ie1a.cloudfront.net/fundednext/trade-certificate.svg" style="color: transparent;">
+        <h2 class="text-center text-lg lg:text-[32px] font-bold lg:pt-2">Trader's Certificate</h2>
+        <hr class="mb-8 border-[#EAEAEA] mt-3 lg:mt-[34px] 2xl:mt-[38px] lg:mb-[75px] 2xl:mb-[78px]">
         <div class=" flex flex-wrap  items-center flex-col-reverse lg:flex-row relative">
           <div class="w-[852px] h-[852px] rounded-[50%] absolute -top-[35%] left-[-65%] hidden lg:block"
-            style="background:rgba(237, 215, 255, 0.6);filter:blur(278.578px)"></div>
+            style="background: rgba(237, 215, 255, 0.6); filter: blur(278.578px);"></div>
           <div class="w-full lg:w-1/2 hidden lg:block">
-            <div class="swiper trader-certificates relative">
+            <div
+              class="swiper swiper-initialized swiper-horizontal trader-certificates relative swiper-backface-hidden ">
               <div class="swiper-wrapper">
-                <div class="swiper-slide mb-16 w-full">
+                <div class="swiper-slide swiper-slide-active mb-16 w-full" data-swiper-slide-index="0"
+                  style="width: 585px; margin-right: 10px;">
                   <div class="flex flex-wrap lg:gap-y-[15px]">
                     <div class="w-1/2 p-1 shadow-sm lg:px-3"><img alt="Certificate" loading="lazy" width="2339"
                         height="1654" decoding="async" data-nimg="1" class="w-full object-center"
-                        style="color:transparent"
-                        srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_1.jpeg&amp;w=3840&amp;q=75 1x"
-                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_1.jpeg&amp;w=3840&amp;q=75" />
+                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_1.jpeg&amp;w=3840&amp;q=75"
+                        style="color: transparent;">
                       <div class="flex items-center justify-between py-3">
                         <div class="flex items-center"><img alt="FundedNext Logo" loading="lazy" width="44" height="44"
-                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]" style="color:transparent"
-                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg" />
+                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]"
+                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg"
+                            style="color: transparent;">
                           <p class="pl-3 text-[10px] font-bold text-[#292D34] 2xl:text-sm">Jiancheng yu</p>
                         </div>
-                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$7028.69<!-- --> </p>
+                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$7028.69 </p>
                       </div>
                     </div>
                     <div class="w-1/2 p-1 shadow-sm lg:px-3"><img alt="Certificate" loading="lazy" width="2339"
                         height="1654" decoding="async" data-nimg="1" class="w-full object-center"
-                        style="color:transparent"
-                        srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_2.jpeg&amp;w=3840&amp;q=75 1x"
-                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_2.jpeg&amp;w=3840&amp;q=75" />
+                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_2.jpeg&amp;w=3840&amp;q=75"
+                        style="color: transparent;">
                       <div class="flex items-center justify-between py-3">
                         <div class="flex items-center"><img alt="FundedNext Logo" loading="lazy" width="44" height="44"
-                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]" style="color:transparent"
-                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg" />
+                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]"
+                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg"
+                            style="color: transparent;">
                           <p class="pl-3 text-[10px] font-bold text-[#292D34] 2xl:text-sm">Jet Hoang</p>
                         </div>
-                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$14676.72<!-- --> </p>
+                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$14676.72 </p>
                       </div>
                     </div>
                     <div class="w-1/2 p-1 shadow-sm lg:px-3"><img alt="Certificate" loading="lazy" width="2339"
                         height="1654" decoding="async" data-nimg="1" class="w-full object-center"
-                        style="color:transparent"
-                        srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_3.jpeg&amp;w=3840&amp;q=75 1x"
-                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_3.jpeg&amp;w=3840&amp;q=75" />
+                        srcset="/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_3.jpeg&amp;w=3840&amp;q=75 1x"
+                        style="color: transparent;">
                       <div class="flex items-center justify-between py-3">
                         <div class="flex items-center"><img alt="FundedNext Logo" loading="lazy" width="44" height="44"
-                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]" style="color:transparent"
-                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg" />
+                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]"
+                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg"
+                            style="color: transparent;">
                           <p class="pl-3 text-[10px] font-bold text-[#292D34] 2xl:text-sm">Hong Ly Ha Thi</p>
                         </div>
-                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$8912.93<!-- --> </p>
+                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$8912.93 </p>
                       </div>
                     </div>
                     <div class="w-1/2 p-1 shadow-sm lg:px-3"><img alt="Certificate" loading="lazy" width="2339"
                         height="1654" decoding="async" data-nimg="1" class="w-full object-center"
-                        style="color:transparent"
-                        srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_4.jpeg&amp;w=3840&amp;q=75 1x"
-                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_4.jpeg&amp;w=3840&amp;q=75" />
+                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_4.jpeg&amp;w=3840&amp;q=75"
+                        style="color: transparent;">
                       <div class="flex items-center justify-between py-3">
                         <div class="flex items-center"><img alt="FundedNext Logo" loading="lazy" width="44" height="44"
-                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]" style="color:transparent"
-                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg" />
+                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]"
+                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg"
+                            style="color: transparent;">
                           <p class="pl-3 text-[10px] font-bold text-[#292D34] 2xl:text-sm">Filippo Stinat</p>
                         </div>
-                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$6283.35<!-- --> </p>
+                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$6283.35 </p>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="swiper-slide mb-16 w-full">
+                <div class="swiper-slide swiper-slide-next mb-16 w-full" data-swiper-slide-index="1"
+                  style="width: 585px; margin-right: 10px;">
                   <div class="flex flex-wrap lg:gap-y-[15px]">
                     <div class="w-1/2 p-1 shadow-sm lg:px-3"><img alt="Certificate" loading="lazy" width="2339"
                         height="1654" decoding="async" data-nimg="1" class="w-full object-center"
-                        style="color:transparent"
-                        srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_5.jpeg&amp;w=3840&amp;q=75 1x"
-                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_5.jpeg&amp;w=3840&amp;q=75" />
+                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_5.jpeg&amp;w=3840&amp;q=75"
+                        style="color: transparent;">
                       <div class="flex items-center justify-between py-3">
                         <div class="flex items-center"><img alt="FundedNext Logo" loading="lazy" width="44" height="44"
-                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]" style="color:transparent"
-                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg" />
+                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]"
+                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg"
+                            style="color: transparent;">
                           <p class="pl-3 text-[10px] font-bold text-[#292D34] 2xl:text-sm">David Simunov</p>
                         </div>
-                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$6789.17<!-- --> </p>
+                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$6789.17 </p>
                       </div>
                     </div>
                     <div class="w-1/2 p-1 shadow-sm lg:px-3"><img alt="Certificate" loading="lazy" width="2339"
                         height="1654" decoding="async" data-nimg="1" class="w-full object-center"
-                        style="color:transparent"
-                        srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_6.jpeg&amp;w=3840&amp;q=75 1x"
-                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_6.jpeg&amp;w=3840&amp;q=75" />
+                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_6.jpeg&amp;w=3840&amp;q=75"
+                        style="color: transparent;">
                       <div class="flex items-center justify-between py-3">
                         <div class="flex items-center"><img alt="FundedNext Logo" loading="lazy" width="44" height="44"
-                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]" style="color:transparent"
-                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg" />
+                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]"
+                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg"
+                            style="color: transparent;">
                           <p class="pl-3 text-[10px] font-bold text-[#292D34] 2xl:text-sm">Andrea Solla</p>
                         </div>
-                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$1099.71<!-- --> </p>
+                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$1099.71 </p>
                       </div>
                     </div>
                     <div class="w-1/2 p-1 shadow-sm lg:px-3"><img alt="Certificate" loading="lazy" width="2339"
                         height="1654" decoding="async" data-nimg="1" class="w-full object-center"
-                        style="color:transparent"
-                        srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_7.jpeg&amp;w=3840&amp;q=75 1x"
-                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_7.jpeg&amp;w=3840&amp;q=75" />
+                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_7.jpeg&amp;w=3840&amp;q=75"
+                        style="color: transparent;">
                       <div class="flex items-center justify-between py-3">
                         <div class="flex items-center"><img alt="FundedNext Logo" loading="lazy" width="44" height="44"
-                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]" style="color:transparent"
-                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg" />
+                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]"
+                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg"
+                            style="color: transparent;">
                           <p class="pl-3 text-[10px] font-bold text-[#292D34] 2xl:text-sm">Aliumar Khan</p>
                         </div>
-                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$3476.13<!-- --> </p>
+                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$3476.13 </p>
                       </div>
                     </div>
                     <div class="w-1/2 p-1 shadow-sm lg:px-3"><img alt="Certificate" loading="lazy" width="2339"
                         height="1654" decoding="async" data-nimg="1" class="w-full object-center"
-                        style="color:transparent"
-                        srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_8.jpeg&amp;w=3840&amp;q=75 1x"
-                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_8.jpeg&amp;w=3840&amp;q=75" />
+                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_8.jpeg&amp;w=3840&amp;q=75"
+                        style="color: transparent;">
                       <div class="flex items-center justify-between py-3">
                         <div class="flex items-center"><img alt="FundedNext Logo" loading="lazy" width="44" height="44"
-                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]" style="color:transparent"
-                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg" />
+                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]"
+                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg"
+                            style="color: transparent;">
                           <p class="pl-3 text-[10px] font-bold text-[#292D34] 2xl:text-sm">Alexander Wright</p>
                         </div>
-                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$8078.57<!-- --> </p>
+                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$8078.57 </p>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="swiper-slide mb-16 w-full">
+                <div class="swiper-slide mb-16 w-full" data-swiper-slide-index="2"
+                  style="width: 585px; margin-right: 10px;">
                   <div class="flex flex-wrap lg:gap-y-[15px]">
                     <div class="w-1/2 p-1 shadow-sm lg:px-3"><img alt="Certificate" loading="lazy" width="2339"
                         height="1654" decoding="async" data-nimg="1" class="w-full object-center"
-                        style="color:transparent"
-                        srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_9.jpeg&amp;w=3840&amp;q=75 1x"
-                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_9.jpeg&amp;w=3840&amp;q=75" />
+                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_9.jpeg&amp;w=3840&amp;q=75"
+                        style="color: transparent;">
                       <div class="flex items-center justify-between py-3">
                         <div class="flex items-center"><img alt="FundedNext Logo" loading="lazy" width="44" height="44"
-                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]" style="color:transparent"
-                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg" />
+                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]"
+                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg"
+                            style="color: transparent;">
                           <p class="pl-3 text-[10px] font-bold text-[#292D34] 2xl:text-sm">Kan Tubtimthong</p>
                         </div>
-                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$20610.52<!-- --> </p>
+                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$20610.52 </p>
                       </div>
                     </div>
                     <div class="w-1/2 p-1 shadow-sm lg:px-3"><img alt="Certificate" loading="lazy" width="2339"
                         height="1654" decoding="async" data-nimg="1" class="w-full object-center"
-                        style="color:transparent"
-                        srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_10.jpeg&amp;w=3840&amp;q=75 1x"
-                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_10.jpeg&amp;w=3840&amp;q=75" />
+                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_10.jpeg&amp;w=3840&amp;q=75"
+                        style="color: transparent;">
                       <div class="flex items-center justify-between py-3">
                         <div class="flex items-center"><img alt="FundedNext Logo" loading="lazy" width="44" height="44"
-                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]" style="color:transparent"
-                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg" />
+                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]"
+                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg"
+                            style="color: transparent;">
                           <p class="pl-3 text-[10px] font-bold text-[#292D34] 2xl:text-sm">Laura Owen</p>
                         </div>
-                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$7091.07<!-- --> </p>
+                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$7091.07 </p>
                       </div>
                     </div>
                     <div class="w-1/2 p-1 shadow-sm lg:px-3"><img alt="Certificate" loading="lazy" width="2339"
                         height="1654" decoding="async" data-nimg="1" class="w-full object-center"
-                        style="color:transparent"
-                        srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_11.jpeg&amp;w=3840&amp;q=75 1x"
-                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_11.jpeg&amp;w=3840&amp;q=75" />
+                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_11.jpeg&amp;w=3840&amp;q=75"
+                        style="color: transparent;">
                       <div class="flex items-center justify-between py-3">
                         <div class="flex items-center"><img alt="FundedNext Logo" loading="lazy" width="44" height="44"
-                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]" style="color:transparent"
-                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg" />
+                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]"
+                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg"
+                            style="color: transparent;">
                           <p class="pl-3 text-[10px] font-bold text-[#292D34] 2xl:text-sm">Louis Gallamos</p>
                         </div>
-                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$9182.12<!-- --> </p>
+                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$9182.12 </p>
                       </div>
                     </div>
                     <div class="w-1/2 p-1 shadow-sm lg:px-3"><img alt="Certificate" loading="lazy" width="2339"
                         height="1654" decoding="async" data-nimg="1" class="w-full object-center"
-                        style="color:transparent"
-                        srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_12.jpeg&amp;w=3840&amp;q=75 1x"
-                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_12.jpeg&amp;w=3840&amp;q=75" />
+                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_12.jpeg&amp;w=3840&amp;q=75"
+                        style="color: transparent;">
                       <div class="flex items-center justify-between py-3">
                         <div class="flex items-center"><img alt="FundedNext Logo" loading="lazy" width="44" height="44"
-                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]" style="color:transparent"
-                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg" />
+                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]"
+                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg"
+                            style="color: transparent;">
                           <p class="pl-3 text-[10px] font-bold text-[#292D34] 2xl:text-sm">Louis Gallamos</p>
                         </div>
-                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$7181.64<!-- --> </p>
+                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$7181.64 </p>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="swiper-slide mb-16 w-full">
+                <div class="swiper-slide mb-16 w-full" data-swiper-slide-index="3"
+                  style="width: 585px; margin-right: 10px;">
                   <div class="flex flex-wrap lg:gap-y-[15px]">
                     <div class="w-1/2 p-1 shadow-sm lg:px-3"><img alt="Certificate" loading="lazy" width="2339"
                         height="1654" decoding="async" data-nimg="1" class="w-full object-center"
-                        style="color:transparent"
-                        srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_13.jpeg&amp;w=3840&amp;q=75 1x"
-                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_13.jpeg&amp;w=3840&amp;q=75" />
+                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_13.jpeg&amp;w=3840&amp;q=75"
+                        style="color: transparent;">
                       <div class="flex items-center justify-between py-3">
                         <div class="flex items-center"><img alt="FundedNext Logo" loading="lazy" width="44" height="44"
-                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]" style="color:transparent"
-                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg" />
+                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]"
+                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg"
+                            style="color: transparent;">
                           <p class="pl-3 text-[10px] font-bold text-[#292D34] 2xl:text-sm">Manikandan P</p>
                         </div>
-                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$3359.83<!-- --> </p>
+                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$3359.83 </p>
                       </div>
                     </div>
                     <div class="w-1/2 p-1 shadow-sm lg:px-3"><img alt="Certificate" loading="lazy" width="2339"
                         height="1654" decoding="async" data-nimg="1" class="w-full object-center"
-                        style="color:transparent"
-                        srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_14.jpeg&amp;w=3840&amp;q=75 1x"
-                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_14.jpeg&amp;w=3840&amp;q=75" />
+                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_14.jpeg&amp;w=3840&amp;q=75"
+                        style="color: transparent;">
                       <div class="flex items-center justify-between py-3">
                         <div class="flex items-center"><img alt="FundedNext Logo" loading="lazy" width="44" height="44"
-                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]" style="color:transparent"
-                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg" />
+                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]"
+                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg"
+                            style="color: transparent;">
                           <p class="pl-3 text-[10px] font-bold text-[#292D34] 2xl:text-sm">Mateusz Szymaniak</p>
                         </div>
-                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$18193.42<!-- --> </p>
+                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$18193.42 </p>
                       </div>
                     </div>
                     <div class="w-1/2 p-1 shadow-sm lg:px-3"><img alt="Certificate" loading="lazy" width="2339"
                         height="1654" decoding="async" data-nimg="1" class="w-full object-center"
-                        style="color:transparent"
-                        srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_15.jpeg&amp;w=3840&amp;q=75 1x"
-                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_15.jpeg&amp;w=3840&amp;q=75" />
+                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_15.jpeg&amp;w=3840&amp;q=75"
+                        style="color: transparent;">
                       <div class="flex items-center justify-between py-3">
                         <div class="flex items-center"><img alt="FundedNext Logo" loading="lazy" width="44" height="44"
-                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]" style="color:transparent"
-                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg" />
+                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]"
+                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg"
+                            style="color: transparent;">
                           <p class="pl-3 text-[10px] font-bold text-[#292D34] 2xl:text-sm">Mean Sokphal</p>
                         </div>
-                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$7002.44<!-- --> </p>
+                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$7002.44 </p>
                       </div>
                     </div>
                     <div class="w-1/2 p-1 shadow-sm lg:px-3"><img alt="Certificate" loading="lazy" width="2339"
                         height="1654" decoding="async" data-nimg="1" class="w-full object-center"
-                        style="color:transparent"
-                        srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_16.jpeg&amp;w=3840&amp;q=75 1x"
-                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_16.jpeg&amp;w=3840&amp;q=75" />
+                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_16.jpeg&amp;w=3840&amp;q=75"
+                        style="color: transparent;">
                       <div class="flex items-center justify-between py-3">
                         <div class="flex items-center"><img alt="FundedNext Logo" loading="lazy" width="44" height="44"
-                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]" style="color:transparent"
-                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg" />
+                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]"
+                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg"
+                            style="color: transparent;">
                           <p class="pl-3 text-[10px] font-bold text-[#292D34] 2xl:text-sm">Muhammad Younas</p>
                         </div>
-                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$6700.41<!-- --> </p>
+                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$6700.41 </p>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="swiper-slide mb-16 w-full">
+                <div class="swiper-slide mb-16 w-full" data-swiper-slide-index="4"
+                  style="width: 585px; margin-right: 10px;">
                   <div class="flex flex-wrap lg:gap-y-[15px]">
                     <div class="w-1/2 p-1 shadow-sm lg:px-3"><img alt="Certificate" loading="lazy" width="2339"
                         height="1654" decoding="async" data-nimg="1" class="w-full object-center"
-                        style="color:transparent"
-                        srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_17.png&amp;w=3840&amp;q=75 1x"
-                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_17.png&amp;w=3840&amp;q=75" />
+                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_17.png&amp;w=3840&amp;q=75"
+                        style="color: transparent;">
                       <div class="flex items-center justify-between py-3">
                         <div class="flex items-center"><img alt="FundedNext Logo" loading="lazy" width="44" height="44"
-                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]" style="color:transparent"
-                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg" />
+                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]"
+                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg"
+                            style="color: transparent;">
                           <p class="pl-3 text-[10px] font-bold text-[#292D34] 2xl:text-sm">Blake</p>
                         </div>
-                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$14224.2<!-- --> </p>
+                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$14224.2 </p>
                       </div>
                     </div>
                     <div class="w-1/2 p-1 shadow-sm lg:px-3"><img alt="Certificate" loading="lazy" width="2339"
                         height="1654" decoding="async" data-nimg="1" class="w-full object-center"
-                        style="color:transparent"
-                        srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_18.png&amp;w=3840&amp;q=75 1x"
-                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_18.png&amp;w=3840&amp;q=75" />
+                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_18.png&amp;w=3840&amp;q=75"
+                        style="color: transparent;">
                       <div class="flex items-center justify-between py-3">
                         <div class="flex items-center"><img alt="FundedNext Logo" loading="lazy" width="44" height="44"
-                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]" style="color:transparent"
-                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg" />
+                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]"
+                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg"
+                            style="color: transparent;">
                           <p class="pl-3 text-[10px] font-bold text-[#292D34] 2xl:text-sm">Bur</p>
                         </div>
-                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$28856.98<!-- --> </p>
+                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$28856.98 </p>
                       </div>
                     </div>
                     <div class="w-1/2 p-1 shadow-sm lg:px-3"><img alt="Certificate" loading="lazy" width="2339"
                         height="1654" decoding="async" data-nimg="1" class="w-full object-center"
-                        style="color:transparent"
-                        srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_19.png&amp;w=3840&amp;q=75 1x"
-                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_19.png&amp;w=3840&amp;q=75" />
+                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_19.png&amp;w=3840&amp;q=75"
+                        style="color: transparent;">
                       <div class="flex items-center justify-between py-3">
                         <div class="flex items-center"><img alt="FundedNext Logo" loading="lazy" width="44" height="44"
-                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]" style="color:transparent"
-                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg" />
+                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]"
+                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg"
+                            style="color: transparent;">
                           <p class="pl-3 text-[10px] font-bold text-[#292D34] 2xl:text-sm">Dan</p>
                         </div>
-                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$40589.15<!-- --> </p>
+                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$40589.15 </p>
                       </div>
                     </div>
                     <div class="w-1/2 p-1 shadow-sm lg:px-3"><img alt="Certificate" loading="lazy" width="2339"
                         height="1654" decoding="async" data-nimg="1" class="w-full object-center"
-                        style="color:transparent"
-                        srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_20.png&amp;w=3840&amp;q=75 1x"
-                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_20.png&amp;w=3840&amp;q=75" />
+                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_20.png&amp;w=3840&amp;q=75"
+                        style="color: transparent;">
                       <div class="flex items-center justify-between py-3">
                         <div class="flex items-center"><img alt="FundedNext Logo" loading="lazy" width="44" height="44"
-                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]" style="color:transparent"
-                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg" />
+                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]"
+                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg"
+                            style="color: transparent;">
                           <p class="pl-3 text-[10px] font-bold text-[#292D34] 2xl:text-sm">Jacob</p>
                         </div>
-                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$11664.8<!-- --> </p>
+                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$11664.8 </p>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="swiper-slide mb-16 w-full">
+                <div class="swiper-slide mb-16 w-full" data-swiper-slide-index="5"
+                  style="width: 585px; margin-right: 10px;">
                   <div class="flex flex-wrap lg:gap-y-[15px]">
                     <div class="w-1/2 p-1 shadow-sm lg:px-3"><img alt="Certificate" loading="lazy" width="2339"
                         height="1654" decoding="async" data-nimg="1" class="w-full object-center"
-                        style="color:transparent"
-                        srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_21.jpg&amp;w=3840&amp;q=75 1x"
-                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_21.jpg&amp;w=3840&amp;q=75" />
+                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_21.jpg&amp;w=3840&amp;q=75"
+                        style="color: transparent;">
                       <div class="flex items-center justify-between py-3">
                         <div class="flex items-center"><img alt="FundedNext Logo" loading="lazy" width="44" height="44"
-                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]" style="color:transparent"
-                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg" />
+                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]"
+                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg"
+                            style="color: transparent;">
                           <p class="pl-3 text-[10px] font-bold text-[#292D34] 2xl:text-sm">Cusi</p>
                         </div>
-                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$12914.41<!-- --> </p>
+                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$12914.41 </p>
                       </div>
                     </div>
                     <div class="w-1/2 p-1 shadow-sm lg:px-3"><img alt="Certificate" loading="lazy" width="2339"
                         height="1654" decoding="async" data-nimg="1" class="w-full object-center"
-                        style="color:transparent"
-                        srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_22.png&amp;w=3840&amp;q=75 1x"
-                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_22.png&amp;w=3840&amp;q=75" />
+                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_22.png&amp;w=3840&amp;q=75"
+                        style="color: transparent;">
                       <div class="flex items-center justify-between py-3">
                         <div class="flex items-center"><img alt="FundedNext Logo" loading="lazy" width="44" height="44"
-                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]" style="color:transparent"
-                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg" />
+                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]"
+                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg"
+                            style="color: transparent;">
                           <p class="pl-3 text-[10px] font-bold text-[#292D34] 2xl:text-sm">Richen</p>
                         </div>
-                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$12560.55<!-- --> </p>
+                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$12560.55 </p>
                       </div>
                     </div>
                     <div class="w-1/2 p-1 shadow-sm lg:px-3"><img alt="Certificate" loading="lazy" width="2339"
                         height="1654" decoding="async" data-nimg="1" class="w-full object-center"
-                        style="color:transparent"
-                        srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_23.png&amp;w=3840&amp;q=75 1x"
-                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_23.png&amp;w=3840&amp;q=75" />
+                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_23.png&amp;w=3840&amp;q=75"
+                        style="color: transparent;">
                       <div class="flex items-center justify-between py-3">
                         <div class="flex items-center"><img alt="FundedNext Logo" loading="lazy" width="44" height="44"
-                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]" style="color:transparent"
-                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg" />
+                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]"
+                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg"
+                            style="color: transparent;">
                           <p class="pl-3 text-[10px] font-bold text-[#292D34] 2xl:text-sm">Rowell</p>
                         </div>
-                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$46307.32<!-- --> </p>
+                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$46307.32 </p>
                       </div>
                     </div>
                     <div class="w-1/2 p-1 shadow-sm lg:px-3"><img alt="Certificate" loading="lazy" width="2339"
                         height="1654" decoding="async" data-nimg="1" class="w-full object-center"
-                        style="color:transparent"
-                        srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_24.png&amp;w=3840&amp;q=75 1x"
-                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_24.png&amp;w=3840&amp;q=75" />
+                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_24.png&amp;w=3840&amp;q=75"
+                        style="color: transparent;">
                       <div class="flex items-center justify-between py-3">
                         <div class="flex items-center"><img alt="FundedNext Logo" loading="lazy" width="44" height="44"
-                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]" style="color:transparent"
-                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg" />
+                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]"
+                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg"
+                            style="color: transparent;">
                           <p class="pl-3 text-[10px] font-bold text-[#292D34] 2xl:text-sm">Thnh Tran</p>
                         </div>
-                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$14075.00<!-- --> </p>
+                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$14075.00 </p>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="swiper-slide mb-16 w-full">
+                <div class="swiper-slide mb-16 w-full" data-swiper-slide-index="6"
+                  style="width: 585px; margin-right: 10px;">
                   <div class="flex flex-wrap lg:gap-y-[15px]">
                     <div class="w-1/2 p-1 shadow-sm lg:px-3"><img alt="Certificate" loading="lazy" width="2339"
                         height="1654" decoding="async" data-nimg="1" class="w-full object-center"
-                        style="color:transparent"
-                        srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_25.jpg&amp;w=3840&amp;q=75 1x"
-                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_25.jpg&amp;w=3840&amp;q=75" />
+                        src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_25.jpg&amp;w=3840&amp;q=75"
+                        style="color: transparent;">
                       <div class="flex items-center justify-between py-3">
                         <div class="flex items-center"><img alt="FundedNext Logo" loading="lazy" width="44" height="44"
-                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]" style="color:transparent"
-                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg" />
+                            decoding="async" data-nimg="1" class="h-[44px] w-[44px]"
+                            src="https://dirslur24ie1a.cloudfront.net/fundednext/fn_logo.svg"
+                            style="color: transparent;">
                           <p class="pl-3 text-[10px] font-bold text-[#292D34] 2xl:text-sm">Zaheer</p>
                         </div>
-                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$62754.02<!-- --> </p>
+                        <p class="text-[13px] font-bold text-[#292D34] 2xl:text-lg">$62754.02 </p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="swiper-pagination"></div>
+              <div
+                class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
+                <span class="swiper-pagination-bullet swiper-pagination-bullet-active">1</span><span
+                  class="swiper-pagination-bullet">2</span><span class="swiper-pagination-bullet">3</span><span
+                  class="swiper-pagination-bullet">4</span><span class="swiper-pagination-bullet">5</span><span
+                  class="swiper-pagination-bullet">6</span><span class="swiper-pagination-bullet">7</span>
+              </div>
             </div>
           </div>
           <div class="w-full lg:w-1/2 lg:hidden py-10">
-            <div class="swiper hall-of-fame-swiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide ml-[2px] lg:ml-0 mb-[50px] lg:mb-[60px]">
+            <div class="swiper swiper-initialized swiper-horizontal hall-of-fame-swiper swiper-backface-hidden">
+              <div class="swiper-wrapper"
+                style="cursor: grab; transition-duration: 300ms; transform: translate3d(-1071.25px, 0px, 0px);">
+                <div class="swiper-slide ml-[2px] lg:ml-0 mb-[50px] lg:mb-[60px]" data-swiper-slide-index="3"
+                  style="width: 525.625px; margin-right: 10px;">
                   <div class="w-full  shadow-lg"><img alt="Certificate" loading="lazy" width="2339" height="1654"
-                      decoding="async" data-nimg="1" class="rounded object-center w-full" style="color:transparent"
-                      srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_1.jpeg&amp;w=3840&amp;q=75 1x"
-                      src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_1.jpeg&amp;w=3840&amp;q=75" />
-                  </div>
+                      decoding="async" data-nimg="1" class="rounded object-center w-full"
+                      srcset="/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_4.jpeg&amp;w=3840&amp;q=75 1x"
+                      src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_4.jpeg&amp;w=3840&amp;q=75"
+                      style="color: transparent;"></div>
                 </div>
-                <div class="swiper-slide ml-[2px] lg:ml-0 mb-[50px] lg:mb-[60px]">
+                <div class="swiper-slide swiper-slide-prev ml-[2px] lg:ml-0 mb-[50px] lg:mb-[60px]"
+                  data-swiper-slide-index="0" style="width: 525.625px; margin-right: 10px;">
                   <div class="w-full  shadow-lg"><img alt="Certificate" loading="lazy" width="2339" height="1654"
-                      decoding="async" data-nimg="1" class="rounded object-center w-full" style="color:transparent"
-                      srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_2.jpeg&amp;w=3840&amp;q=75 1x"
-                      src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_2.jpeg&amp;w=3840&amp;q=75" />
-                  </div>
+                      decoding="async" data-nimg="1" class="rounded object-center w-full"
+                      srcset="/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_1.jpeg&amp;w=3840&amp;q=75 1x"
+                      src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_1.jpeg&amp;w=3840&amp;q=75"
+                      style="color: transparent;"></div>
                 </div>
-                <div class="swiper-slide ml-[2px] lg:ml-0 mb-[50px] lg:mb-[60px]">
+                <div class="swiper-slide swiper-slide-active ml-[2px] lg:ml-0 mb-[50px] lg:mb-[60px]"
+                  data-swiper-slide-index="1" style="width: 525.625px; margin-right: 10px;">
                   <div class="w-full  shadow-lg"><img alt="Certificate" loading="lazy" width="2339" height="1654"
-                      decoding="async" data-nimg="1" class="rounded object-center w-full" style="color:transparent"
-                      srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_3.jpeg&amp;w=3840&amp;q=75 1x"
-                      src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_3.jpeg&amp;w=3840&amp;q=75" />
-                  </div>
+                      decoding="async" data-nimg="1" class="rounded object-center w-full"
+                      srcset="/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_2.jpeg&amp;w=3840&amp;q=75 1x"
+                      src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_2.jpeg&amp;w=3840&amp;q=75"
+                      style="color: transparent;"></div>
                 </div>
-                <div class="swiper-slide ml-[2px] lg:ml-0 mb-[50px] lg:mb-[60px]">
+                <div class="swiper-slide swiper-slide-next ml-[2px] lg:ml-0 mb-[50px] lg:mb-[60px]"
+                  data-swiper-slide-index="2" style="width: 525.625px; margin-right: 10px;">
                   <div class="w-full  shadow-lg"><img alt="Certificate" loading="lazy" width="2339" height="1654"
-                      decoding="async" data-nimg="1" class="rounded object-center w-full" style="color:transparent"
-                      srcSet="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_4.jpeg&amp;w=3840&amp;q=75 1x"
-                      src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_4.jpeg&amp;w=3840&amp;q=75" />
-                  </div>
+                      decoding="async" data-nimg="1" class="rounded object-center w-full"
+                      srcset="/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_3.jpeg&amp;w=3840&amp;q=75 1x"
+                      src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcertificate_3.jpeg&amp;w=3840&amp;q=75"
+                      style="color: transparent;"></div>
                 </div>
               </div>
-              <div class="swiper-pagination"></div>
+              <div
+                class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
+                <span class="swiper-pagination-bullet"></span><span
+                  class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span
+                  class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span>
+              </div>
             </div>
           </div>
           <div class="w-full lg:w-1/2 lg:pl-14 2xl:pl-[152px] 2xl:mt-[-68px]"><img
-              alt="Icon of a Certificate of Excellence, representing the trader&#x27;s achievement." loading="lazy"
+              alt="Icon of a Certificate of Excellence, representing the trader's achievement." loading="lazy"
               width="47" height="41" decoding="async" data-nimg="1"
-              class="hidden lg:block h-[32px] w-[39px]  2xl:w-[46px] 2xl:h-[40px]" style="color:transparent"
-              src="https://dirslur24ie1a.cloudfront.net/fundednext/message-icon.svg" />
+              class="hidden lg:block h-[32px] w-[39px]  2xl:w-[46px] 2xl:h-[40px]"
+              src="https://dirslur24ie1a.cloudfront.net/fundednext/message-icon.svg" style="color: transparent;">
             <h3
               class="text-2xl lg:text-[38px] 2xl:text-[50px] lg:leading-[50px] 2xl:leading-[70px] font-bold text-center lg:text-left leading-9 pt-[22px]">
               Here is our traders accomplishment</h3>
