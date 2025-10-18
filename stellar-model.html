@@ -4,9 +4,6 @@
 <head>
   <meta charSet="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
   <link rel="preload" href="_next/static/media/24c4d94a40e79814-s.p.ttf" as="font" type="font/ttf" />
   <link rel="preload" href="_next/static/media/2775818c6623a49a-s.p.woff2" as="font" type="font/woff2" />
   <link rel="preload" href="_next/static/media/46b36286e2ea994a-s.p.woff2" as="font" type="font/woff2" />
@@ -159,52 +156,105 @@
   <meta name="next-size-adjust" />
   <script src="_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""
     type="d536c9359998854d9a638aa9-text/javascript"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
 
-  <script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
-    // document.addEventListener('DOMContentLoaded', function () {
-    //   new Swiper('.hero-model', {
-    //     slidesPerView: 1,
-    //     spaceBetween: 40, // matches your inline margin
-    //     loop: true,
-    //     centeredSlides: true,
-    //     autoplay: {
-    //       delay: 3500,
-    //       disableOnInteraction: false
-    //     },
-    //     pagination: {
-    //       el: '.hero-model .swiper-pagination',
-    //       clickable: true,
+  <style>
+    .swiper {
+      width: 100%;
+      height: 100%;
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
 
-    //     },
-    //     navigation: {
-    //       nextEl: '.hero-model .swiper-button-next',
-    //       prevEl: '.hero-model .swiper-button-prev'
-    //     },
-    //     breakpoints: {
-    //       // Responsive: show more slides on large screens if desired
-    //       768: {
-    //         slidesPerView: 1,
-    //         spaceBetween: 40
-    //       },
-    //       1200: {
-    //         slidesPerView: 1,
-    //         spaceBetween: 40
-    //       }
-    //     }
-    //   });
-    // });
-    new Swiper('.hero-model', {
-      slidesPerView: 1,
-      spaceBetween: 40,
-      loop: true,
-      pagination: {
-        el: '.hero-model .swiper-pagination',
-        clickable: true
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 80%;
+      max-width: 600px;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .swiper-pagination-bullet {
+      width: 12px;
+      height: 12px;
+      background-color: rgba(255, 255, 255, 0.5);
+      opacity: 1;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: #6B57ED;
+    }
+
+    /* Your custom styles */
+    .bg-cover {
+      background-size: cover;
+      background-position: center;
+    }
+
+    .rounded-\[20px\] {
+      border-radius: 20px;
+    }
+
+    .font-Rebond {
+      font-family: Arial, sans-serif;
+      /* Replace with actual font if available */
+    }
+
+    .bg-\[\#6B57ED\] {
+      background-color: #6B57ED;
+    }
+
+    .bg-\[\#FFFFFF\] {
+      background-color: #FFFFFF;
+    }
+
+    .button-rotation {
+      animation: rotate 2s linear infinite;
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
       }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 640px) {
+      .swiper-slide {
+        width: 90%;
+      }
+    }
+  </style>
+  <!-- Initialize Swiper -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        centeredSlides: true,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+
+      });
     });
   </script>
-
 </head>
 
 <body class="__variable_9b9fd1 __variable_a213da __className_a1b627 __variable_663d34 __variable_67edef ">
@@ -526,7 +576,7 @@
                       <div class="flex flex-col gap-4">
                         <div class=""><a
                             class="flex gap-2 py-4 px-4 hover:bg-black/5 justify-start items-start rounded-[10px]"
-                            href="https://help.fundednext.com/">
+                            href="/en/index.html">
                             <div class="w-[24px] h-[24px]"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -540,7 +590,7 @@
                           </a></div>
                         <div class=""><a
                             class="flex gap-2 py-4 px-4 hover:bg-black/5 justify-start items-start rounded-[10px]"
-                            href="https://helpfutures.fundednext.com/">
+                            href="/en/collections/6096162-affiliate-payment-partner-faq.html">
                             <div class="w-[24px] h-[24px]"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -1162,34 +1212,41 @@
                   </path>
                 </svg></span></a></div>
         </div>
-        <div
-          class="swiper swiper-initialized swiper-horizontal sm:!pt-10 !px-2 sm:!px-0 mySwiper swiper-backface-hidden hero-model swiper-wrapper">
-          <div class="swiper-wrapper"
-            style="transition-duration: 0ms; transition-delay: 0ms; transform: translate3d(-459.5px, 0px, 0px);">
-            <div class="swiper-slide swiper-slide-prev" style="width: 572.667px; margin-right: 40px;"><button
-                type="button" tabindex="0" class="bg-cover rounded-[20px] relative z-0 text-left block w-full"
+        <div class="swiper mySwiper " style=' display: flex !important; gap: 20px; padding-bottom: 50px; '>
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <button type="button" tabindex="0"
+                class="bg-cover rounded-[20px] relative z-0 text-left block w-full h-full"
                 style="background-image: url('https://dirslur24ie1a.cloudfront.net/fundednext/model-pages/slider1.png');">
-                <div class="absolute h-full w-full transition-opacity duration-500 false"
+                <div class="absolute h-full w-full transition-opacity duration-500"
                   style="background: linear-gradient(270deg, rgba(4, 4, 29, 0) 0%, rgb(4, 4, 29) 35%, rgb(4, 4, 29) 100%);">
                 </div>
                 <div class="block sm:hidden absolute top-0 left-0 w-full h-full bg-black opacity-40 z-[-1]"></div>
-                <div class="p-[30px] lg:p-[60px] text-white z-10">
+                <div class="p-[30px] lg:p-[60px] text-white z-10 relative">
                   <h2 class="sm:max-w-[550px] font-Rebond text-[18px] sm:text-xl lg:text-4xl font-bold leading-tight">
-                    The
-                    Stellar Route to Trading Greatness</h2>
+                    The Stellar Route to Trading Greatness
+                  </h2>
                   <p
                     class="max-w-full sm:max-w-[300px] lg:max-w-[400px] text-xs sm:text-sm lg:text-base font-medium my-4 sm:my-7 md:my-8">
                     The Stellar Challenge offers unmatched flexibility and opportunity. Trade at your own pace and
-                    experience
-                    the rewards of true trading freedom!</p><a href="#start-challenge"><button type="button"
-                      class="bg-[#6B57ED] text-white rounded-[26px] px-5 py-2 text-xs sm:text-sm lg:text-base font-semibold">Get
-                      Plan</button></a>
+                    experience the rewards of true trading freedom!
+                  </p>
+                  <a href="#start-challenge">
+                    <button type="button"
+                      class="bg-[#6B57ED] text-white rounded-[26px] px-5 py-2 text-xs sm:text-sm lg:text-base font-semibold">
+                      Get Plan
+                    </button>
+                  </a>
                 </div>
-              </button></div>
-            <div class="swiper-slide swiper-slide-active" style="width: 572.667px; margin-right: 40px;"><button
-                tabindex="0" type="button" class="relative block">
+              </button>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide flex-1!">
+              <button tabindex="0" type="button" class="relative block w-full h-full">
                 <div
-                  class=" hidden sm:block absolute top-[-25px] left-[50%] translate-x-[-50%] w-[calc(100%+45px)] h-[20%] border-t border-r border-l border-[#505073] border-b-none rounded-t-[30px] bg-transparent z-[-2]">
+                  class="hidden sm:block absolute top-[-25px] left-[50%] translate-x-[-50%] w-[calc(100%+45px)] h-[20%] border-t border-r border-l border-[#505073] border-b-none rounded-t-[30px] bg-transparent z-[-2]">
                 </div>
                 <div class="hidden sm:block absolute top-[calc(20%-25px)] left-[-22.5px] h-[80%] w-[1px]"
                   style="background-image: linear-gradient(to top, transparent, rgb(80, 80, 115));"></div>
@@ -1197,9 +1254,10 @@
                   style="background-image: linear-gradient(to top, transparent, rgb(80, 80, 115));"></div>
                 <div class="absolute h-full w-full transition-opacity duration-500 opacity-0 pointer-events-none"
                   style="background: linear-gradient(90deg, rgba(4, 4, 29, 0) 0%, rgb(4, 4, 29) 35%, rgb(4, 4, 29) 100%);">
-                </div><img alt="Video Thumbnail" loading="lazy" width="820" height="460" decoding="async" data-nimg="1"
+                </div>
+                <img alt="Video Thumbnail" loading="lazy" width="820" height="460" decoding="async"
                   src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fmodel-pages%2Fsteller-thumbnail.png&amp;w=1920&amp;q=75"
-                  style="color: transparent;">
+                  class="w-full h-full object-cover">
                 <div role="button" tabindex="0"
                   class="bg-black w-[100px] h-[100px] sm:w-[140px] sm:h-[140px] rounded-full flex items-center justify-center p-[15px] sm:p-[25px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                   <div
@@ -1215,33 +1273,40 @@
                     </div>
                   </div>
                 </div>
-              </button></div>
-            <div class="swiper-slide swiper-slide-next" style="width: 572.667px; margin-right: 40px;"><button
-                type="button" tabindex="0" class="bg-cover rounded-[20px] relative z-0 text-left block w-full"
-                style="background-image: url(&quot;https://dirslur24ie1a.cloudfront.net/fundednext/model-pages/slider2.png&quot;);">
-                <div class="absolute h-full w-full transition-opacity duration-500 false"
+              </button>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+              <button type="button" tabindex="0"
+                class="bg-cover rounded-[20px] relative z-0 text-left block w-full h-full"
+                style="background-image: url('https://dirslur24ie1a.cloudfront.net/fundednext/model-pages/slider2.png');">
+                <div class="absolute h-full w-full transition-opacity duration-500"
                   style="background: linear-gradient(90deg, rgba(4, 4, 29, 0) 0%, rgb(4, 4, 29) 35%, rgb(4, 4, 29) 100%);">
                 </div>
                 <div class="block sm:hidden absolute top-0 left-0 w-full h-full bg-black opacity-40 z-[-1]"></div>
-                <div class="p-[30px] lg:p-[60px] text-white z-10">
+                <div class="p-[30px] lg:p-[60px] text-white z-10 relative">
                   <h2 class="sm:max-w-[550px] font-Rebond text-[18px] sm:text-xl lg:text-4xl font-bold leading-tight">
-                    Seize
-                    the Market with the Stellar Challenge</h2>
+                    Seize the Market with the Stellar Challenge
+                  </h2>
                   <p
                     class="max-w-full sm:max-w-[300px] lg:max-w-[400px] text-xs sm:text-sm lg:text-base font-medium my-4 sm:my-7 md:my-8">
                     Ready to trade on your terms? Choose the prop firm challenge that meets your needs! Experience pure
-                    trading freedom and keep up to 95% of your profits.</p><a href="/plan"><button type="button"
-                      class="bg-[#FFFFFF] text-black rounded-[26px] px-5 py-2 text-xs sm:text-sm lg:text-base font-semibold">Sign
-                      up</button></a>
+                    trading freedom and keep up to 95% of your profits.
+                  </p>
+                  <a href="/plan">
+                    <button type="button"
+                      class="bg-[#FFFFFF] text-black rounded-[26px] px-5 py-2 text-xs sm:text-sm lg:text-base font-semibold">
+                      Sign up
+                    </button>
+                  </a>
                 </div>
-              </button></div>
+              </button>
+            </div>
           </div>
-          <div
-            class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
-            <span class="swiper-pagination-bullet"></span><span
-              class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span
-              class="swiper-pagination-bullet"></span>
-          </div>
+
+          <!-- Pagination -->
+          <div class="swiper-pagination"></div>
         </div>
       </div>
       <div class="v2-container text-white my-20 sm:my-[180px]">

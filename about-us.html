@@ -33,6 +33,9 @@
   <link rel="stylesheet" href="_next/static/css/a719670bf169596b.css" data-precedence="next" />
   <link rel="stylesheet" href="_next/static/css/fa2c06472999d848.css" data-precedence="next" />
   <link rel="preload" as="script" fetchPriority="low" href="_next/static/chunks/webpack-2d8b8cbc12de4c89.js" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
   <script src="_next/static/chunks/fd9d1056-18799b40052dc88f.js" async=""
     type="144a2e3ed9084a3e3fcd9be5-text/javascript"></script>
   <script src="_next/static/chunks/2117-286d9515e9b64ec2.js" async=""
@@ -155,6 +158,33 @@
   <script src="navbar.js"></script>
   <script src="_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""
     type="144a2e3ed9084a3e3fcd9be5-text/javascript"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var swiper = new Swiper(".principle-slider", {
+        // effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        loop: true,
+        speed: 500,
+        coverflowEffect: {
+          rotate: 2,
+          stretch: 0.5,
+          depth: 50,
+          modifier: 2.5,
+          slideShadows: true,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          dynamicBullets: true,
+        },
+
+      });
+    });
+  </script>
+
+
 </head>
 
 <body class="__variable_9b9fd1 __variable_a213da __className_a1b627 __variable_663d34 __variable_67edef ">
@@ -476,7 +506,7 @@
                       <div class="flex flex-col gap-4">
                         <div class=""><a
                             class="flex gap-2 py-4 px-4 hover:bg-black/5 justify-start items-start rounded-[10px]"
-                            href="https://help.fundednext.com/">
+                            href="/en/index.html">
                             <div class="w-[24px] h-[24px]"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -490,7 +520,7 @@
                           </a></div>
                         <div class=""><a
                             class="flex gap-2 py-4 px-4 hover:bg-black/5 justify-start items-start rounded-[10px]"
-                            href="https://helpfutures.fundednext.com/">
+                            href="/en/collections/6096162-affiliate-payment-partner-faq.html">
                             <div class="w-[24px] h-[24px]"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -1397,83 +1427,189 @@
       </section>
       <section class="container flex flex-wrap lg:justify-between lg:items-center overflow-hidden" id="CoreValue2">
         <div class="w-full lg:w-5/12 hidden lg:block">
-          <div class="swiper w-8/12 mx-auto lg:w-[300px] principle-slider">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide relative mb-[50px] w-fit aspect-[3/4]"><img alt="principle-img" loading="lazy"
-                  width="300" height="400" decoding="async" data-nimg="1" class="w-full aspect-[3/4]"
-                  style="color:transparent" srcSet="_next/core-values-7.jpeg 1x, _next/core-values-7.jpeg 2x"
-                  src="_next/core-values-2.jpeg" /></div>
-              <div class="swiper-slide relative mb-[50px] w-fit aspect-[3/4]"><img alt="principle-img" loading="lazy"
-                  width="300" height="400" decoding="async" data-nimg="1" class="w-full aspect-[3/4]"
-                  style="color:transparent" srcSet="_next/core-values-2.jpeg 1x, _next/core-values-2.jpeg 2x"
-                  src="_next/core-values-2.jpeg" /></div>
-              <div class="swiper-slide relative mb-[50px] w-fit aspect-[3/4]"><img alt="principle-img" loading="lazy"
-                  width="300" height="400" decoding="async" data-nimg="1" class="w-full aspect-[3/4]"
-                  style="color:transparent" srcSet="_next/core-values-2.jpeg 1x, _next/core-values-2.jpeg 2x"
-                  src="_next/core-values-2.jpeg" /></div>
-              <div class="swiper-slide relative mb-[50px] w-fit aspect-[3/4]"><img alt="principle-img" loading="lazy"
-                  width="300" height="400" decoding="async" data-nimg="1" class="w-full aspect-[3/4]"
-                  style="color:transparent" srcSet="_next/core-values-3.jpeg 1x, _next/core-values-3.jpeg 2x"
-                  src="_next/core-values-3.jpeg" /></div>
-              <div class="swiper-slide relative mb-[50px] w-fit aspect-[3/4]"><img alt="principle-img" loading="lazy"
-                  width="300" height="400" decoding="async" data-nimg="1" class="w-full aspect-[3/4]"
-                  style="color:transparent" srcSet="_next/core-values-4.jpeg 1x, _next/core-values-4.jpeg 2x"
-                  src="_next/core-values-4.jpeg" /></div>
-              <div class="swiper-slide relative mb-[50px] w-fit aspect-[3/4]"><img alt="principle-img" loading="lazy"
-                  width="300" height="400" decoding="async" data-nimg="1" class="w-full aspect-[3/4]"
-                  style="color:transparent" srcSet="_next/core-values-5.jpeg 1x, _next/core-values-5.jpeg 2x"
-                  src="_next/core-values-5.jpeg" /></div>
-              <div class="swiper-slide relative mb-[50px] w-fit aspect-[3/4]"><img alt="principle-img" loading="lazy"
-                  width="300" height="400" decoding="async" data-nimg="1" class="w-full aspect-[3/4]"
-                  style="color:transparent" srcSet="_next/core-values-6.jpeg 1x, _next/core-values-6.jpeg 2x"
-                  src="_next/core-values-6.jpeg" /></div>
+          <div
+            class="swiper swiper-cards swiper-3d swiper-initialized swiper-horizontal swiper-watch-progress w-8/12 mx-auto lg:w-[300px] principle-slider card-slider ">
+            <div class="swiper-wrapper" style="cursor: grab; transform: translateX(0px); transition-duration: 300ms;">
+              <div class="swiper-slide swiper-slide-prev relative mb-[50px] w-fit aspect-[3/4]"
+                data-swiper-slide-index="6"
+                style="width: 300px; z-index: 6; transform: translate3d(calc(-7.25% + 0px), 0px, -100px) rotateZ(-2deg) scale(1); transition-duration: 300ms;">
+                <img alt="principle-img" loading="lazy" width="300" height="400" decoding="async" data-nimg="1"
+                  class="w-full aspect-[3/4]"
+                  src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcore_values_7.png&amp;w=640&amp;q=75"
+                  style="color: transparent;">
+                <div class="swiper-slide-shadow swiper-slide-shadow-cards"
+                  style="opacity: 1; transition-duration: 300ms;">
+                </div>
+              </div>
+              <div
+                class="swiper-slide swiper-slide-visible swiper-slide-fully-visible swiper-slide-active relative mb-[50px] w-fit aspect-[3/4]"
+                data-swiper-slide-index="0"
+                style="width: 300px; z-index: 7; transform: translate3d(-300px, 0px, 0px) rotateZ(0deg) scale(1); transition-duration: 300ms;">
+                <img alt="principle-img" loading="lazy" width="300" height="400" decoding="async" data-nimg="1"
+                  class="w-full aspect-[3/4]"
+                  src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcore_values_1.png&amp;w=640&amp;q=75"
+                  style="color: transparent;">
+                <div class="swiper-slide-shadow swiper-slide-shadow-cards"
+                  style="opacity: 0; transition-duration: 300ms;">
+                </div>
+              </div>
+              <div class="swiper-slide swiper-slide-next relative mb-[50px] w-fit aspect-[3/4]"
+                data-swiper-slide-index="1"
+                style="width: 300px; z-index: 6; transform: translate3d(calc(7.25% - 600px), 0px, -100px) rotateZ(2deg) scale(1); transition-duration: 300ms;">
+                <img alt="principle-img" loading="lazy" width="300" height="400" decoding="async" data-nimg="1"
+                  class="w-full aspect-[3/4]"
+                  src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcore_values_2.png&amp;w=640&amp;q=75"
+                  style="color: transparent;">
+                <div class="swiper-slide-shadow swiper-slide-shadow-cards"
+                  style="opacity: 1; transition-duration: 300ms;">
+                </div>
+              </div>
+              <div class="swiper-slide relative mb-[50px] w-fit aspect-[3/4]" data-swiper-slide-index="2"
+                style="width: 300px; z-index: 5; transform: translate3d(calc(13% - 900px), 0px, -200px) rotateZ(4deg) scale(1); transition-duration: 300ms;">
+                <img alt="principle-img" loading="lazy" width="300" height="400" decoding="async" data-nimg="1"
+                  class="w-full aspect-[3/4]"
+                  src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcore_values_3.jpg&amp;w=640&amp;q=75"
+                  style="color: transparent;">
+                <div class="swiper-slide-shadow swiper-slide-shadow-cards"
+                  style="opacity: 1; transition-duration: 300ms;">
+                </div>
+              </div>
+              <div class="swiper-slide relative mb-[50px] w-fit aspect-[3/4]" data-swiper-slide-index="3"
+                style="width: 300px; z-index: 4; transform: translate3d(calc(17.25% - 1200px), 0px, -300px) rotateZ(6deg) scale(1); transition-duration: 300ms;">
+                <img alt="principle-img" loading="lazy" width="300" height="400" decoding="async" data-nimg="1"
+                  class="w-full aspect-[3/4]"
+                  src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcore_values_4.png&amp;w=640&amp;q=75"
+                  style="color: transparent;">
+                <div class="swiper-slide-shadow swiper-slide-shadow-cards"
+                  style="opacity: 1; transition-duration: 300ms;">
+                </div>
+              </div>
+              <div class="swiper-slide relative mb-[50px] w-fit aspect-[3/4]" data-swiper-slide-index="4"
+                style="width: 300px; z-index: 3; transform: translate3d(calc(20% - 1500px), 0px, -400px) rotateZ(8deg) scale(1); transition-duration: 300ms;">
+                <img alt="principle-img" loading="lazy" width="300" height="400" decoding="async" data-nimg="1"
+                  class="w-full aspect-[3/4]"
+                  src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcore_values_5.png&amp;w=640&amp;q=75"
+                  style="color: transparent;">
+                <div class="swiper-slide-shadow swiper-slide-shadow-cards"
+                  style="opacity: 1; transition-duration: 300ms;">
+                </div>
+              </div>
+              <div class="swiper-slide relative mb-[50px] w-fit aspect-[3/4]" data-swiper-slide-index="5"
+                style="width: 300px; z-index: 2; transform: translate3d(calc(20% - 1800px), 0px, -400px) rotateZ(8deg) scale(1); transition-duration: 300ms;">
+                <img alt="principle-img" loading="lazy" width="300" height="400" decoding="async" data-nimg="1"
+                  class="w-full aspect-[3/4]"
+                  src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcore_values_6.png&amp;w=640&amp;q=75"
+                  style="color: transparent;">
+                <div class="swiper-slide-shadow swiper-slide-shadow-cards"
+                  style="opacity: 1; transition-duration: 300ms;">
+                </div>
+              </div>
             </div>
-            <div class="swiper-pagination"></div>
+            <div
+              class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
+              <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span
+                class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span
+                class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span
+                class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span>
+            </div>
           </div>
         </div>
         <div class="w-full lg:w-1/2">
           <p class=" lg:inline-block   text-xl text-center lg:text-left font-semibold"><span
-              class="bg-gradient-to-r from-[#FF62DC]  to-[#5C63FF]  text-transparent bg-clip-text"> <!-- -->Core
-              Values</span></p>
+              class="bg-gradient-to-r from-[#FF62DC]  to-[#5C63FF]  text-transparent bg-clip-text"> Core Values</span>
+          </p>
           <h2
             class="text-[#12141D] pt-[10px] lg:pt-0 text-[24px] text-center lg:text-left  lg:text-[42px] font-bold 2xl:w-9/12">
             <span>Guiding Principles that</span> <span
               class="bg-gradient-to-r from-[#25B6F4]  to-[#8E80FF]  text-transparent bg-clip-text">Define Us</span>
           </h2>
           <div class="w-full lg:hidden">
-            <div class="swiper w-8/12 mx-auto lg:w-[300px] principle-slider">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide relative mb-[50px] w-fit aspect-[3/4]"><img alt="principle-img" loading="lazy"
-                    width="300" height="400" decoding="async" data-nimg="1" class="w-full aspect-[3/4]"
-                    style="color:transparent"
-                    srcSet="_next/core-values%EF%B9%AA20(7).jpeg 1x, _next/core-values%EF%B9%AA20(7).jpeg 2x"
-                    src="_next/core-values%EF%B9%AA20(7).jpeg" /></div>
-                <div class="swiper-slide relative mb-[50px] w-fit aspect-[3/4]"><img alt="principle-img" loading="lazy"
-                    width="300" height="400" decoding="async" data-nimg="1" class="w-full aspect-[3/4]"
-                    style="color:transparent" srcSet="_next/core-values-4.jpeg 1x, _next/core-values-4.jpeg 2x"
-                    src="_next/core-values-4.jpeg" /></div>
-                <div class="swiper-slide relative mb-[50px] w-fit aspect-[3/4]"><img alt="principle-img" loading="lazy"
-                    width="300" height="400" decoding="async" data-nimg="1" class="w-full aspect-[3/4]"
-                    style="color:transparent" srcSet="_next/core-values-2.jpeg 1x, _next/core-values-2.jpeg 2x"
-                    src="_next/core-values-2.jpeg" /></div>
-                <div class="swiper-slide relative mb-[50px] w-fit aspect-[3/4]"><img alt="principle-img" loading="lazy"
-                    width="300" height="400" decoding="async" data-nimg="1" class="w-full aspect-[3/4]"
-                    style="color:transparent" srcSet="_next/core-values-3.jpeg 1x, _next/core-values-3.jpeg 2x"
-                    src="_next/core-values-3.jpeg" /></div>
-                <div class="swiper-slide relative mb-[50px] w-fit aspect-[3/4]"><img alt="principle-img" loading="lazy"
-                    width="300" height="400" decoding="async" data-nimg="1" class="w-full aspect-[3/4]"
-                    style="color:transparent" srcSet="_next/core-values-4.jpeg 1x, _next/core-values-4.jpeg 2x"
-                    src="_next/core-values-4.jpeg" /></div>
-                <div class="swiper-slide relative mb-[50px] w-fit aspect-[3/4]"><img alt="principle-img" loading="lazy"
-                    width="300" height="400" decoding="async" data-nimg="1" class="w-full aspect-[3/4]"
-                    style="color:transparent" srcSet="_next/core-values-5.jpeg 1x, _next/core-values-5.jpeg 2x"
-                    src="_next/core-values-5.jpeg" /></div>
-                <div class="swiper-slide relative mb-[50px] w-fit aspect-[3/4]"><img alt="principle-img" loading="lazy"
-                    width="300" height="400" decoding="async" data-nimg="1" class="w-full aspect-[3/4]"
-                    style="color:transparent" srcSet="_next/core-values-6.jpeg 1x, _next/core-values-6.jpeg 2x"
-                    src="_next/core-values-6.jpeg" /></div>
+            <div
+              class="swiper swiper-cards swiper-3d swiper-initialized swiper-horizontal swiper-watch-progress w-8/12 mx-auto lg:w-[300px] principle-slider">
+              <div class="swiper-wrapper" style="cursor: grab; transition-duration: 300ms; transform: translateX(0px);">
+                <div class="swiper-slide relative mb-[50px] w-fit aspect-[3/4]" data-swiper-slide-index="4"
+                  style="transition-duration: 300ms; width: 469px; z-index: 3; transform: translate3d(calc(-20% + 0px), 0px, -400px) rotateZ(-8deg) scale(1);">
+                  <img alt="principle-img" loading="lazy" width="300" height="400" decoding="async" data-nimg="1"
+                    class="w-full aspect-[3/4]"
+                    src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcore_values_5.png&amp;w=640&amp;q=75"
+                    style="color: transparent;">
+                  <div class="swiper-slide-shadow swiper-slide-shadow-cards"
+                    style="transition-duration: 300ms; opacity: 1;">
+                  </div>
+                </div>
+                <div class="swiper-slide relative mb-[50px] w-fit aspect-[3/4]" data-swiper-slide-index="5"
+                  style="transition-duration: 300ms; width: 469px; z-index: 4; transform: translate3d(calc(-17.25% - 469px), 0px, -300px) rotateZ(-6deg) scale(1);">
+                  <img alt="principle-img" loading="lazy" width="300" height="400" decoding="async" data-nimg="1"
+                    class="w-full aspect-[3/4]"
+                    src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcore_values_6.png&amp;w=640&amp;q=75"
+                    style="color: transparent;">
+                  <div class="swiper-slide-shadow swiper-slide-shadow-cards"
+                    style="transition-duration: 300ms; opacity: 1;">
+                  </div>
+                </div>
+                <div class="swiper-slide relative mb-[50px] w-fit aspect-[3/4]" data-swiper-slide-index="6"
+                  style="transition-duration: 300ms; width: 469px; z-index: 5; transform: translate3d(calc(-13% - 938px), 0px, -200px) rotateZ(-4deg) scale(1);">
+                  <img alt="principle-img" loading="lazy" width="300" height="400" decoding="async" data-nimg="1"
+                    class="w-full aspect-[3/4]"
+                    src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcore_values_7.png&amp;w=640&amp;q=75"
+                    style="color: transparent;">
+                  <div class="swiper-slide-shadow swiper-slide-shadow-cards"
+                    style="transition-duration: 300ms; opacity: 1;">
+                  </div>
+                </div>
+                <div class="swiper-slide swiper-slide-prev relative mb-[50px] w-fit aspect-[3/4]"
+                  data-swiper-slide-index="0"
+                  style="transition-duration: 300ms; width: 469px; z-index: 6; transform: translate3d(calc(-7.25% - 1407px), 0px, -100px) rotateZ(-2deg) scale(1);">
+                  <img alt="principle-img" loading="lazy" width="300" height="400" decoding="async" data-nimg="1"
+                    class="w-full aspect-[3/4]"
+                    src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcore_values_1.png&amp;w=640&amp;q=75"
+                    style="color: transparent;">
+                  <div class="swiper-slide-shadow swiper-slide-shadow-cards"
+                    style="transition-duration: 300ms; opacity: 1;">
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide swiper-slide-visible swiper-slide-fully-visible swiper-slide-active relative mb-[50px] w-fit aspect-[3/4]"
+                  data-swiper-slide-index="1"
+                  style="transition-duration: 300ms; width: 469px; z-index: 7; transform: translate3d(-1876px, 0px, 0px) rotateZ(0deg) scale(1);">
+                  <img alt="principle-img" loading="lazy" width="300" height="400" decoding="async" data-nimg="1"
+                    class="w-full aspect-[3/4]"
+                    src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcore_values_2.png&amp;w=640&amp;q=75"
+                    style="color: transparent;">
+                  <div class="swiper-slide-shadow swiper-slide-shadow-cards"
+                    style="transition-duration: 300ms; opacity: 0;">
+                  </div>
+                </div>
+                <div class="swiper-slide swiper-slide-next relative mb-[50px] w-fit aspect-[3/4]"
+                  data-swiper-slide-index="2"
+                  style="transition-duration: 300ms; width: 469px; z-index: 6; transform: translate3d(calc(7.25% - 2345px), 0px, -100px) rotateZ(2deg) scale(1);">
+                  <img alt="principle-img" loading="lazy" width="300" height="400" decoding="async" data-nimg="1"
+                    class="w-full aspect-[3/4]"
+                    src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcore_values_3.jpg&amp;w=640&amp;q=75"
+                    style="color: transparent;">
+                  <div class="swiper-slide-shadow swiper-slide-shadow-cards"
+                    style="transition-duration: 300ms; opacity: 1;">
+                  </div>
+                </div>
+                <div class="swiper-slide relative mb-[50px] w-fit aspect-[3/4]" data-swiper-slide-index="3"
+                  style="transition-duration: 300ms; width: 469px; z-index: 5; transform: translate3d(calc(13% - 2814px), 0px, -200px) rotateZ(4deg) scale(1);">
+                  <img alt="principle-img" loading="lazy" width="300" height="400" decoding="async" data-nimg="1"
+                    class="w-full aspect-[3/4]"
+                    src="https://fundednext.com/_next/image?url=https%3A%2F%2Fdirslur24ie1a.cloudfront.net%2Ffundednext%2Fcore_values_4.png&amp;w=640&amp;q=75"
+                    style="color: transparent;">
+                  <div class="swiper-slide-shadow swiper-slide-shadow-cards"
+                    style="transition-duration: 300ms; opacity: 1;">
+                  </div>
+                </div>
               </div>
-              <div class="swiper-pagination"></div>
+              <div
+                class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
+                <span class="swiper-pagination-bullet"></span><span
+                  class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span
+                  class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span
+                  class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span
+                  class="swiper-pagination-bullet"></span>
+              </div>
             </div>
           </div>
           <ul class="flex flex-wrap py-[10px] pl-5 lg:pl-0">
@@ -1535,7 +1671,7 @@
                   </clipPath>
                 </defs>
               </svg>
-              <p class=" text-[#5F5F5F] lg:text-[#494949] text-[15px] "> <!-- -->Move Fast, Chase Excellence</p>
+              <p class=" text-[#5F5F5F] lg:text-[#494949] text-[15px] "> Move Fast, Chase Excellence</p>
             </li>
             <li class="w-full md:w-1/2 flex gap-x-[20px] py-[7px] lg:py-[10px]"><svg viewBox="0 0 20 20"
                 class="h-[20px] w-[20px] undefined" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1595,7 +1731,7 @@
                   </clipPath>
                 </defs>
               </svg>
-              <p class=" text-[#5F5F5F] lg:text-[#494949] text-[15px] "> <!-- -->Play as a Team</p>
+              <p class=" text-[#5F5F5F] lg:text-[#494949] text-[15px] "> Take Ownership, Deliver Outcomes</p>
             </li>
             <li class="w-full md:w-1/2 flex gap-x-[20px] py-[7px] lg:py-[10px]"><svg viewBox="0 0 20 20"
                 class="h-[20px] w-[20px] undefined" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1655,7 +1791,7 @@
                   </clipPath>
                 </defs>
               </svg>
-              <p class=" text-[#5F5F5F] lg:text-[#494949] text-[15px] "> <!-- -->Take Ownership, Deliver Results</p>
+              <p class=" text-[#5F5F5F] lg:text-[#494949] text-[15px] "> Invent &amp; Simplify</p>
             </li>
             <li class="w-full md:w-1/2 flex gap-x-[20px] py-[7px] lg:py-[10px]"><svg viewBox="0 0 20 20"
                 class="h-[20px] w-[20px] undefined" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1715,7 +1851,7 @@
                   </clipPath>
                 </defs>
               </svg>
-              <p class=" text-[#5F5F5F] lg:text-[#494949] text-[15px] "> <!-- -->Deliver Best Experiences</p>
+              <p class=" text-[#5F5F5F] lg:text-[#494949] text-[15px] "> The Dream Team</p>
             </li>
             <li class="w-full md:w-1/2 flex gap-x-[20px] py-[7px] lg:py-[10px]"><svg viewBox="0 0 20 20"
                 class="h-[20px] w-[20px] undefined" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1775,7 +1911,7 @@
                   </clipPath>
                 </defs>
               </svg>
-              <p class=" text-[#5F5F5F] lg:text-[#494949] text-[15px] "> <!-- -->Debate Openly, Commit Fully</p>
+              <p class=" text-[#5F5F5F] lg:text-[#494949] text-[15px] "> Have Honesty &amp; Integrity</p>
             </li>
             <li class="w-full md:w-1/2 flex gap-x-[20px] py-[7px] lg:py-[10px]"><svg viewBox="0 0 20 20"
                 class="h-[20px] w-[20px] undefined" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1835,7 +1971,7 @@
                   </clipPath>
                 </defs>
               </svg>
-              <p class=" text-[#5F5F5F] lg:text-[#494949] text-[15px] "> <!-- -->Invent &amp; Simplify</p>
+              <p class=" text-[#5F5F5F] lg:text-[#494949] text-[15px] "> Debate Openly, Commit Fully</p>
             </li>
             <li class="w-full md:w-1/2 flex gap-x-[20px] py-[7px] lg:py-[10px]"><svg viewBox="0 0 20 20"
                 class="h-[20px] w-[20px] undefined" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1895,7 +2031,7 @@
                   </clipPath>
                 </defs>
               </svg>
-              <p class=" text-[#5F5F5F] lg:text-[#494949] text-[15px] "> <!-- -->Have Honesty &amp; Integrity</p>
+              <p class=" text-[#5F5F5F] lg:text-[#494949] text-[15px] "> Product First</p>
             </li>
           </ul>
         </div>
